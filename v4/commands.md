@@ -220,21 +220,38 @@ example:
 
 `!channel remove` Command to remove current text channel and all of its trackings.
 
-### !webhook add (Discord only)
+For webhook:
+### !channel add namesomething webhookurl (name is the recognition for poracle that it's an webhook command... Discord only)
 
-`!webhook add https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to add webhook to receive alarms.  
+`!channel add namesomething https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to add webhook to receive alarms.  
 
-### !webhook remove (Discord only)
+### !channel remove namesomething (Discord only)
 
-`!webhook remove https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to remove webhook and all of its trackings.  
+`!channel remove namesomething  Command to remove webhook and all of its trackings.  
 
-### !webhook list (Discord only)
+### example: First:
 
-`!webhook list` show currently registered webhooks
+ !channel add namepokemon webhookurl
+ !area add namepokemon Berlin Moskau whatever
+`!track namepokemon pikachu 
+ Or:
+ !channel add namequest webhookurl
+ !area add namequest Berlin Moskau 
+ !quest all items namequest
+Or:
+ !channel add nameraidfive webhookurl
+ !area add nameraidfive Berlin
+ !raid level5 nameraidfive
+Or: 
+ !channel add nameegg webhookurl 
+ !area add nameegg Berlin
+ !egg level1 level2 level3 nameegg
+Or: 
+ !channel add nameinvasion webhookurl 
+ !area add nameinvasion Berlin
+ !invasion male female nameinvasion
 
-### !track 
-
-`!track pikachu https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Adds pikachu tracking for webhook in the command  
+After "name" only letters works, NO Numbers!!!
 
 ### !backup 
 
