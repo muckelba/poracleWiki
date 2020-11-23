@@ -220,21 +220,46 @@ example:
 
 `!channel remove` Command to remove current text channel and all of its trackings.
 
-### !webhook add (Discord only)
+## For webhooks:
 
-`!webhook add https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to add webhook to receive alarms.  
+### !channel add (Discord only)
 
-### !webhook remove (Discord only)
+Adding a name so PoracleJS can identify it as a webhook command
 
-`!webhook remove https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to remove webhook and all of its trackings.  
+`!channel add namesomething https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl`
 
-### !webhook list (Discord only)
+Command to add webhook to receive alarms.  
 
-`!webhook list` show currently registered webhooks
+### !channel remove (Discord only)
 
-### !track 
+`!channel remove namesomething`
 
-`!track pikachu https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Adds pikachu tracking for webhook in the command  
+Command to remove webhook and all of its trackings.  
+
+### Area command with webhooks
+
+`!area add namesomething Berlin Moskau`
+
+`!area remove namesomething Berlin Moskau`
+
+#### Examples:
+
+Mons:
+`!track namepokemon pikachu`
+
+Quests:
+`!quest all items namequest `
+
+Raids:
+`!raid level5 nameraidfive`
+
+Eggs: 
+`!egg level1 level2 level3 nameegg`
+
+Invasions:
+`!invasion male female nameinvasion`
+
+**Make sure to use only letters and no numbers in the webhook name!**
 
 ### !backup 
 
