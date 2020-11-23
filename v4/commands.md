@@ -220,38 +220,46 @@ example:
 
 `!channel remove` Command to remove current text channel and all of its trackings.
 
-For webhook:
-### !channel add namesomething webhookurl (name is the recognition for poracle that it's an webhook command... Discord only)
+## For webhooks:
 
-`!channel add namesomething https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl` Command to add webhook to receive alarms.  
+### !channel add (Discord only)
 
-### !channel remove namesomething (Discord only)
+Adding a name so PoracleJS can identify it as a webhook command
 
-`!channel remove namesomething  Command to remove webhook and all of its trackings.  
+`!channel add namesomething https://discordapp.com/api/webhooks/533935953597076/J5t8S43hi5fbg-eBVuJDhD2RX_FMSUl`
 
-### example: First:
+Command to add webhook to receive alarms.  
 
- !channel add namepokemon webhookurl
- !area add namepokemon Berlin Moskau whatever
-`!track namepokemon pikachu 
- Or:
- !channel add namequest webhookurl
- !area add namequest Berlin Moskau 
- !quest all items namequest
-Or:
- !channel add nameraidfive webhookurl
- !area add nameraidfive Berlin
- !raid level5 nameraidfive
-Or: 
- !channel add nameegg webhookurl 
- !area add nameegg Berlin
- !egg level1 level2 level3 nameegg
-Or: 
- !channel add nameinvasion webhookurl 
- !area add nameinvasion Berlin
- !invasion male female nameinvasion
+### !channel remove (Discord only)
 
-After "name" only letters works, NO Numbers!!!
+`!channel remove namesomething`
+
+Command to remove webhook and all of its trackings.  
+
+### Area command with webhooks
+
+`!area add namesomething Berlin Moskau`
+
+`!area remove namesomething Berlin Moskau`
+
+#### Examples:
+
+Mons:
+`!track namepokemon pikachu`
+
+Quests:
+`!quest all items namequest `
+
+Raids:
+`!raid level5 nameraidfive`
+
+Eggs: 
+`!egg level1 level2 level3 nameegg`
+
+Invasions:
+`!invasion male female nameinvasion`
+
+**Make sure to use only letters and no numbers in the webhook name!**
 
 ### !backup 
 
