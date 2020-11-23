@@ -32,7 +32,7 @@ parent: v4
 
 4. Create your basic config:
     ```
-    npm init
+    npm run init
     ```
 
 5. Start Poracle:
