@@ -242,7 +242,7 @@ Command to remove webhook and all of its trackings.
 
 `!area remove namesomething Berlin Moskau`
 
-#### Examples:
+### Examples:
 
 Mons:
 `!track namepokemon pikachu`

@@ -9,7 +9,7 @@ parent: v4
 
 ## Prerequisites
 
-* [NodeJS](https://nodejs.org/en/) 8 or newer
+* [NodeJS](https://nodejs.org/en/) between version 12 and 14
 
 
 ## Installation

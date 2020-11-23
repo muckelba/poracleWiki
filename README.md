@@ -1,4 +1,4 @@
-![logo](https://raw.githubusercontent.com/KartulUdus/poracleWiki/master/assets/PoracleJSWiki.png)
+![logo](https://raw.githubusercontent.com/muckelba/poracleWiki/master/assets/PoracleJSWiki.png)
 # Poracle Documentation
 
 ## Introduction
