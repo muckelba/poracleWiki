@@ -109,6 +109,7 @@ available filters:
 |genderless |`!track unown genderless`        | Tracks genderless unowns |
 |everything |`!track everything iv90 level20` | Tracks eveything with a minimum IV of 90% level 20 and higher. <br/> ⚠️This will overwrite all other monsters in the command⚠️ |
 |gen |`!track gen6 iv60 level15` | Tracks gen 6 pokemon with a minimum IV of 60% level 15 and higher. <br/> ⚠️This will overwrite all other monsters in the command⚠️ |
+|clean |`!track pikachu clean` | Automatically deletes the messages as soon as the pokemon expires |
 
 ### !untrack
 
@@ -135,6 +136,7 @@ Available filters:
 |harmony|`!raid venusaur harmony`| Tracks venusaur raids in uncontested gyms|
 |everything|`!raid everything`| Tracks Raids from level 1 - 5|
 |gen|`!raid gen5`| Tracks raids against gen5 pokemon|
+|clean |`!raid snorlax clean` | Automatically deletes the messages as soon as the raid expires |
 
 ### !raid remove
 
@@ -157,6 +159,7 @@ Available filters:
 |valor|`!egg level1 valor`| Tracks level 1 eggs controlling team is valor|
 |harmony|`!egg level5 harmony`| Tracks level 5 eggs in uncontested gyms|
 |everything|`!egg everything`| Tracks Raids from level 1 - 5|
+|clean |`!egg level5 clean` | Automatically deletes the messages as soon as the egg expires |
 
 ### !egg remove
 
@@ -197,6 +200,7 @@ Available filters:
 |d|`!invasion d50`| Tracks invasions within 50m of set location|
 |female or male|`!invasion female`| Tracks only female or male invasions|
 |remove|`!invasion remove`| Removes all alerts|
+|clean |`!invasion mixed clean` | Automatically deletes the messages as soon as the invasion expires |
 
 ## Admin commands
 
