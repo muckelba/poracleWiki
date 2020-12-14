@@ -30,7 +30,7 @@ This will be the token to use as `TLG_TOKEN=["462xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Next create a new group in telegram, name it and invite your bot to it.
 
-This channel name can be used as `TLG_CHANNEL=newGroupName` so this will server as the chat where users can register with the `/poracle` command
+This channel name can be used as `TLG_CHANNEL=newGroupName` so this will serve as the chat where users can register with the `/poracle` command
 
 
 
