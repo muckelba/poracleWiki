@@ -9,7 +9,7 @@ parent: v3
 
 Before running PoracleJS for the first time, you need to create a `.env` file. There is an example you can copy over to begin with `cp .env.example .env`.
 
-Altenatively, you can use a json config by copying from defaults `cp config/default.json config/local.json`
+Alternatively, you can use a json config by copying from defaults `cp config/default.json config/local.json`
 
 
 ## Database settings
