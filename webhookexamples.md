@@ -8,6 +8,24 @@ layout: default
 
 ## MAD
 
+### Incoming Payload
+
+MAD sends webhooks every 10 seconds with a batch of events.
+
+```json
+[
+    {
+        "type":"raid",
+        "message": {...}
+    },
+    {
+        "type":"pokemon",
+        "message": {...}
+    },
+    ...
+]
+```
+
 ### Raid
 ```json
 {
