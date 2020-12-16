@@ -7,7 +7,7 @@ parent: v3
 
 # MySQL
 
-A MySQl or MariaDB database is required to store registered users/channels and their trackings  
+A MySQL or MariaDB database is required to store registered users/channels and their trackings  
   
 **Please do not use your scanner database for PoracleJS! Create a new one!**
 
