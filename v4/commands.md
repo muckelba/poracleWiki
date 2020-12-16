@@ -236,7 +236,7 @@ Command to add webhook to receive alarms.
 
 ### !channel remove (Discord only)
 
-`!channel remove namesomething`
+`!channel remove namesomething http://webhookurl`
 
 Command to remove webhook and all of its trackings.  
 
