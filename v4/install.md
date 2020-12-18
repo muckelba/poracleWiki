@@ -19,6 +19,11 @@ parent: v4
    git clone https://github.com/KartulUdus/PoracleJS.git 
    ```
 
+1a. At the moment the recommendation is to use the develop branch
+   ```
+   git checkout develop
+   ```
+   
 2.  Either create a [Discord Bot](../discordbot.html), add it to your server and take note of your token for later.
     
     or
