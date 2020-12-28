@@ -123,6 +123,7 @@ TLG_ENABLED=          # default: false
 TLG_TOKEN=["400000002:AAhdsjl_alkrhjfsqlkjEQ"]
 TLG_ADMINS=["201234515"]
 TLG_CHANNEL=
+TLG_REGISTER=
 TLG_IMAGES=           # default: true
 TLG_LOCATION=         # default: true
 TLG_STICKER=
@@ -134,9 +135,21 @@ TLG_STICKER=
 |TLG_TOKEN| Your [Telegrambot Token](telegrambot.html). Has to be in [ "square.brackets.and.quotes" ]|
 |TLG_ADMINS| Array of admin id's who can manage channels|
 |TLG_CHANNEL| Channel name to register in|
+|TLG_REGISTER| Channel ID to check users in|
 |TLG_IMAGES | If telegram should send a sticker|
 |TLG_LOCATION| If telegram should send a location|
 |TLG_STICKER| Custom url for stickers, needs to be .webp. Default: https://raw.githubusercontent.com/KartulUdus/PoracleJS/master/src/util/images/telegram/|
+
+### Usercheck
+
+> PHP and composer is required!
+
+It is possible to setup a automatic usercheck to unregister users that are not in a specific telegram group anymore. Enable it by setting `TLG_REGISTER` to the group ID of that specific group and giving admin/kick permissions to your bot. The next step is to install the required php packages by running `composer install`. When that is finished, try to run the command by hand: `php console Telegram:Member:Check` (make sure to be in Poracle root directory before running it). It should disable every member from your Poracle Database that is currently not in that group. To setup an automatic check, create a cron entry for it: 
+
+```bash
+0 * * * * cd /PATHTOYOUR/PoracleJS && php console Telegram:Member:Check > /dev/null 2>&1
+```
+This will run the check every hour.
 
 ## Discord settings
 
@@ -195,6 +208,7 @@ CMDCHANNEL=
 CMDEGG=
 CMDHELP=
 CMDLODCATION=
+CMDPVP=
 CMDQUEST=
 CMDRAID=
 CMDRESTORE=
@@ -209,5 +223,17 @@ CMDWEBHOOK=
 ```
 
 This does **NOT** rename command properties such as `remove`, `everything` or any of the genders.
+
+## Weather 
+
+Poracle can add a warning to a notification when a mon will change its IV because of a weatherchange. That weather prediction is 90% save and based on data from Accuweather. An API key is required!
+
+```bash
+WEATHER_APIKEY=
+```
+
+| Option        | Value       | 
+| ------------- |-------------| 
+|WEATHER_APIKEY| AccuWeather API Key|
 
 When you are done with your config, you can make sure that it's a [valid JSON format here](https://jsonlint.com/)
