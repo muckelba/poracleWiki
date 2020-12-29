@@ -9,6 +9,8 @@ parent: v4
 
 Note: this is an alternative way to install PoracleJS and not needed if you choose to install it with the "normal" [installation guide](install.html).
 
+Disclaimer: This page is using the development branch. If you want to use the master branch, change the image tag in the compose file and adjust the urls of the wget commands.
+
 ## Prerequisites
 
 Make sure to have [Docker](https://docs.docker.com/get-docker/) and [docker-compose](https://docs.docker.com/compose/install/) installed.
