@@ -170,6 +170,38 @@ MAD sends webhooks every 10 seconds with a batch of events.
 
 Invasions and Lures can be in the same payload.
 
+### Quest
+
+```json
+{
+    "type": "quest",
+    "message": {
+      "pokestop_id": "",
+      "pokestop_name": "",
+      "template": "CHALLENGE_CATCH_EASY",
+      "pokestop_url": "",
+      "conditions": [],
+      "type": 4,
+      "latitude": xxx,
+      "longitude": xxx,
+      "rewards": [
+        {
+          "info": {
+            "item_id": 1,
+            "amount": 5
+          },
+          "type": 2
+        }
+      ],
+      "target": 10,
+      "timestamp": unixtimestamp,
+      "quest_task": ""
+    }
+  }
+```
+
+Quest webhooks are quite complex and always different based on the type and reward.
+
 ## RDM
 
 Please someone tell me.
