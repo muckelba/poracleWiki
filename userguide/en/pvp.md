@@ -3,7 +3,7 @@ title: PvP
 nav_order: 5
 layout: default
 parent: English
-grand_parent: Userguide
+grand_parent: v3 Userguide
 ---
 
 # PvP Filters
