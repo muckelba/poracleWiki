@@ -13,7 +13,7 @@ All alarm messages can be customized via the `./config/dts.json` file.
 
 A useful visualizer can be found [HERE](https://leovoel.github.io/embed-visualizer/) 
 
-Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url.  
+Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url. You can do all kinds of fancy handlebar magic, read more about that [HERE][https://github.com/helpers/handlebars-helpers].
 
 ### Monster alarms
 {% raw %}
@@ -68,10 +68,10 @@ Any of the fields can be customized with the following:
 |{{tthh}}| Full hours until hidden|
 |{{tthm}}| Full minutes until hidden|
 |{{tths}}| Full seconds until hidden|
-|{{#confirmedTime}}True{{/confirmedTime}}| prints "True" if disappear timestamp is verified (based on RDM webhooks)|
+|{{verified}}| True/False if disappear timestamp is verified|
 |{{now}}| Current Timestamp|
-|{{lat}}| Latitude of the alerted location|
-|{{lon}}| Longitude of the alerted location|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
 |{{addr}}| Address of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
@@ -84,11 +84,11 @@ Any of the fields can be customized with the following:
 |{{neighbourhood}}| Neighbourhood of the alerted location|
 |{{quickMove}}| Monsers quick move (alt: {{moveName move_1}} )|
 |{{chargeMove}}| Monsters charge move (alt: {{moveName move_2}} )|
-|{{moveEmoji move_1}}| Monsers quick move type emoji|
-|{{moveEmoji move_2}}| Monsters charge move type emoji|
+|{{move1emoji}}| Monsers quick move type emoji|
+|{{move2emoji}}| Monsters charge move type emoji|
 |{{iv}}| Monsters Individual Value Precentage|
 |{{cp}}| Monsters CP|
-|{{genderName}}| Monsters gender|
+|{{genderData.emoji}}| Monsters gender emoji|
 |{{weight}}| Monsters weight|
 |{{level}}| Monsters level|
 |{{atk}}| Monsters attack|
@@ -106,8 +106,6 @@ Any of the fields can be customized with the following:
 |{{gif}}| Gif image using pokemon-gif|
 |{{{pokemoji}}}| Custom Emoji of the pokemon if defined in config/emoji.json|
 |{{flagemoji}}|Country flag emoji for location|
-|{{lat}}| Latitude of the alert|
-|{{lon}}| Longitude of the alert|
 |{{areas}}| Matched geofence area names for alert|
 
 
@@ -145,8 +143,8 @@ Any of the fields can be customized with the following:
 |{{tthm}}| Full minutes until raid ends|
 |{{tths}}| Full seconds until raid ends|
 |{{now}}| Current Timestamp|
-|{{lat}}| Latitude of the alerted location|
-|{{lon}}| Longitude of the alerted location|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
 |{{addr}}| Address of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
@@ -159,8 +157,8 @@ Any of the fields can be customized with the following:
 |{{neighbourhood}}| Neighbourhood of the alerted location|
 |{{quickMove}}| Monsters quick move|
 |{{chargeMove}}| Monsters charge move|
-|{{moveEmoji move_1}}| Monsters quick move type emoji|
-|{{moveEmoji move_2}}| Monsters charge move type emoji|
+|{{move1emoji}}| Monsters quick move type emoji|
+|{{move2emoji}}| Monsters charge move type emoji|
 |{{cp}}| Raid boss cp|
 |{{cp20}}| Monsters cp with 100% perfect IV and level 20|
 |{{cp25}}| Monsters cp with 100% perfect IV and level 25|
@@ -180,8 +178,6 @@ Any of the fields can be customized with the following:
 |{{gif}}| Gif image using pokemon-gif|
 |{{flagemoji}}|Country flag emoji for location|
 |{{{pokemoji}}}|Custom emoji for the award pokemon as set in config/emoji.json|
-|{{lat}}| Latitude of the alert|
-|{{lon}}| Longitude of the alert|
 |{{areas}}| Matched geofence area names for alert|
 
 
@@ -220,8 +216,8 @@ Any of the fields can be customized with the following:
 |{{tths}}| Full seconds until raid ends|
 |{{now}}| Current Timestamp|
 |{{addr}}| Address of the alerted location|
-|{{lat}}| Latitude of the alerted location|
-|{{lon}}| Longitude of the alerted location|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
 |{{zipcode}}| Zip code of the alerted location|
@@ -236,7 +232,6 @@ Any of the fields can be customized with the following:
 |{{level}}| Raid level|
 |{{{detailsurl}}}| Descriptive picture url|
 |{{{staticmap}}}| Static link to map|
-|{{{rocketmap}}}| Link to Rocketmap with alerted location|
 |{{{mapurl}}}|Link to google maps search of the location|
 |{{{imgUrl}}}| Link to monsters picture|
 |{{color}}| Color to be used for embed (Color of monsters primary type)|
@@ -271,24 +266,25 @@ Any of the fields can be customized with the following:
 | Option        | Value         | 
 | --------------- |:-------------:|
 |{{now}}| Current Timestamp|
-|{{questType}}| The type of quest (for example: battle in 3 raids|
-|{{conditionString}}| Extra conditions (for example: you must win these battles|
+|{{questType}}| The type of quest (for example: battle in 3 raids)|
+|{{quest_task}}| Exact text of the Quest (MAD only)|
+|{{conditionString}}| Extra conditions (for example: you must win these battles)|
 |{{rewardString}}| Reward if you finish (Pokemon, item or stardust)|
 |{{monsterNames}}| Names of all reward monsters for this quest|
 |{{itemNames}}| Names of all reward Items for this quest|
 |{{stardust}}| The word "stardust" if it's that type of quest|
 |{{{imgUrl}}}| Image of the reward. Could be Pokemon or Item or stardust|
-|{{name}}| Name of the Pokestop (or might be {{pokestop_name}} )|
-|{{{rewardemoji}}}| emoji for the award as set in config/emoji.json|
+|{{pokestop_name}}| Name of the Pokestop|
+|{{{rewardemoji}}}| emoji for the reward|
 |{{url}}| Link to the image of the Pokestop|
-|{{minCp}}| Minimum CP of the reward pokemon |
+|{{minCp}}| Minimum CP of the reward pokemon|
 |{{maxCp}}| Maximum CP of the reward pokemon|
 |{{{staticmap}}}| Static link to map|
 |{{{mapurl}}}| Link to google maps|
 |{{{applemap}}}| Link to apple maps|
 |{{areas}}| Matched geofence area names for alert|
-|{{lat}}| Latitude of the alerted location|
-|{{lon}}| Longitude of the alerted location|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
 |{{zipcode}}| Zip code of the alerted location|
@@ -333,6 +329,7 @@ Any of the fields can be customized with the following:
 |{{gruntType}}| The type of invasion (for example: Rock, Mixed|
 |{{gruntTypeEmoji}}| The emoji of type of invasion|
 |{{gruntRewards}}| If known, a list of possible rewards. Splits into 2 lines if there's a 85/15 split chance of reward.|
+|{{gruntRewardsList}}| A list of possible rewards containing chance, id and name|
 |{{gruntTypeColor}}| The color code matching the grunt invasion type|
 |{{genderName}}| The gender name or gender emoji of the grunt|
 |{{gruntTypeId}}| The id of the invasion type|
@@ -344,8 +341,8 @@ Any of the fields can be customized with the following:
 |{{{mapurl}}}| Link to google maps|
 |{{{applemap}}}| Link to apple maps|
 |{{areas}}| Matched geofence area names for alert|
-|{{lat}}| Latitude of the alerted location|
-|{{lon}}| Longitude of the alerted location|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
 |{{zipcode}}| Zip code of the alerted location|
@@ -378,7 +375,12 @@ Any of the fields can be customized with the following:
 
 | Option        | Value         | 
 | --------------- |:-------------:
-|?|?
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
+|{{oldweather}}| Weather of the past hour|
+|{{oldweatheremoji}} Weatheremoji of the past hour|
+|{{weather}}| Weather of the current hour|
+|{{weatheremoji}} Weatheremoji of the current hour|
 
 ### Greeting Message
 
