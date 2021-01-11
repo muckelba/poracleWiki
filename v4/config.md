@@ -144,7 +144,7 @@ The tiers of IV colors are as follows:
 
 ## Geocoding 
 
-Read more about Geocoding and Staticmaps [here](geocoding.html)
+Read more about [Geocoding](geocoding.html) and [Staticmaps](staticmaps.html).
 
 | Option        | Value         | 
 | ------------- |---------------|
