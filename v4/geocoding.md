@@ -7,7 +7,7 @@ parent: v4
 
 # Geocoding
 {% raw %}
-Poracle supports four different geocoding services for displaying addresses in your DTS by using `{{addr}}`, `{{streetNumber}}`, `{{streetName}}`, `{{zipcode}}`, `{{country}}`, `{{countryCode}}`, `{{city}}`, `{{state}}`, `{{stateCode}}` and `{{neighbourhood}}`.
+Poracle supports four different geocoding services for displaying addresses in your DTS by using `{{addr}}`, `{{streetNumber}}`, `{{streetName}}`, `{{zipcode}}`, `{{country}}`, `{{countryCode}}`, `{{city}}`, `{{state}}`, `{{stateCode}}` and `{{neighbourhood}}`. Setting it to `none` will set those fields to `unknown`.
 {% endraw %}
 
 ## Poracle

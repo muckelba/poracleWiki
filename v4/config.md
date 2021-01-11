@@ -77,12 +77,12 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 
 | Option        | Value         | 
 | ------------- |---------------|
-| pvpDisplayMaxRank | No clue, can someone PR this or tell me?
-| pvpDisplayGreatMinCP | No clue, can someone PR this or tell me?
-| pvpDisplayUltraMinCP | No clue, can someone PR this or tell me?
-| pvpFilterMaxRank | No clue, can someone PR this or tell me?
-| pvpFilterGreatMinCP | No clue, can someone PR this or tell me?
-| pvpFilterUltraMinCP | No clue, can someone PR this or tell me?
+| pvpDisplayMaxRank | Limits the results shown in user alerts |
+| pvpDisplayGreatMinCP |Limits the results shown in user alerts |
+| pvpDisplayUltraMinCP | Limits the results shown in user alerts |
+| pvpFilterMaxRank | Forces boundaries on the user tracking requests when they are out of range |
+| pvpFilterGreatMinCP | Forces boundaries on the user tracking requests when they are out of range |
+| pvpFilterUltraMinCP | Forces boundaries on the user tracking requests when they are out of range |
 
 ## Tracking
 
