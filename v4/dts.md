@@ -1,6 +1,6 @@
 ---
 title: Customize Alarm Messages
-nav_order: 6
+nav_order: 7
 layout: default
 parent: v4
 ---
@@ -166,7 +166,7 @@ Any of the fields can be customized with the following:
 |{{mincp20}}| Monsters cp with 0% perfect IV and level 25|
 |{{level}}| Raid level|
 |{{gymName}}| Name of the gym|
-|{{teamName}}| Team owner of the gym
+|{{teamName}}| Team owner of the gym |
 |{{description}}| Description of the gym|
 |{{{detailsurl}}}| Descriptive picture url|
 |{{{staticmap}}}| Static link to map|
@@ -228,6 +228,7 @@ Any of the fields can be customized with the following:
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{neighbourhood}}| Neighbourhood of the alerted location|
 |{{gymName}}| Name of the gym|
+|{{teamName}}| Team owner of the gym |
 |{{description}}| Description of the gym|
 |{{level}}| Raid level|
 |{{{detailsurl}}}| Descriptive picture url|

@@ -1,6 +1,6 @@
 ---
 title: Commands
-nav_order: 7
+nav_order: 8
 layout: default
 parent: v4
 ---
@@ -51,7 +51,7 @@ Instead of "Tallinn kesklinn" you can search for any address, city, country or k
 
 ### !area add
 
-`!area add Tallinn` If the admin has set up a [Geofence](config.md)  name Tallinn, this command will add tracking from that area to the user.  
+`!area add Tallinn` If the admin has set up a [Geofence](config.hmtl)  name Tallinn, this command will add tracking from that area to the user.  
 In case the area is not configured, the bot will reply with the areas that are available.  
 You can also use multiple areas in the same command (separated by spaces) and only available ones will be added.  
 

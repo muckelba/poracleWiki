@@ -7,13 +7,13 @@ layout: default
 # Contributing to PoracleJS
 
 ## I need help
-Best place to get your questions answered is our [discord](https://discord.gg/WDMr8xX).   
-Should that not succeed in solving your problem, you're also welcome to [raise an issue on github](https://github.com/KartulUdus/PoracleJS/issues).  
+Best place to get your questions answered is our [Discord](https://discord.gg/WDMr8xX).   
+Should that not succeed in solving your problem, you're also welcome to [raise an issue on GitHub](https://github.com/KartulUdus/PoracleJS/issues).  
 
 ## How do I get started contributing?
 
 The project has its own developer dependencies that are automatically installed along with `npm i`.    
-It includes packages to run the [wiki](https://kartuludus.github.io/PoracleJS/#/) and check your code against the project [style guide](https://github.com/KartulUdus/PoracleJS/blob/master/.eslintrc.json)  
+It includes packages to run the [wiki](https://muckelba.github.io/poracleWiki/) and check your code against the project [style guide](https://github.com/KartulUdus/PoracleJS/blob/master/.eslintrc.json)  
 
 Linting rules will be checked automatically by travis; however, should you wish to save some time, you can run the check locally by running:  
 `npm run lint` (please note,  Windows users may have to run `node_modules\.bin\eslint app\src` manually)

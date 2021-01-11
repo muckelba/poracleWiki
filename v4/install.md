@@ -26,17 +26,17 @@ parent: v4
     create a [Telegram Bot](../telegrambot.html), create a group and add the bot to it and note your token for later.
 
 3. Install package requirements:
-    ```
+    ```bash
     npm install
     ```
 
 4. Create your basic config:
-    ```
-    npm run init
+    ```bash
+    cp config/default.json config/local.json
     ```
 
 5. Start Poracle:
-    ```
+    ```bash
     npm start
     ```
 
