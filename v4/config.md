@@ -17,7 +17,7 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 | Option        | Value         | 
 | ------------- |---------------| 
 | host| Interface to listen on. Leave it at `127.0.0.1` if you are sending webhooks from the same server to PoracleJS|
-| port| Port to listen on.
+| port| Port to listen on |
 | ipWhitelist| Array of IPs that are able to send webhooks|
 | ipBlacklist| Array of IPs that are not able to send webhooks|
 

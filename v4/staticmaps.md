@@ -7,7 +7,7 @@ parent: v4
 
 # Staticmaps
 {% raw %}
-Poracle supports five different staticmaps services for displaying little maps below your alarms by using `{{{staticmap}}}`. If you are using Telegram, you can set `webpage_preview` to True and put `[\u2007]({{{staticmap}}})` infront of your text to have an embedded staticmap.
+Poracle supports five different staticmaps services for displaying little maps below your alarms by using `{{{staticmap}}}`. If you are using Telegram, you can set `webpage_preview` to True and put `[\u200A]({{{staticmap}}})` infront of your text to have an embedded staticmap.
 {% endraw %}
 
 ## Poracle
