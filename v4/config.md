@@ -136,11 +136,11 @@ The tiers of IV colors are as follows:
 | Option        | Value         | 
 | ------------- |---------------|
 | enabled | Enables Telegram support |
-| checkRole | Enables a rolecheck to automatically unregister left members |
+| channels | Array of chat IDs where where users can register in |
+| checkRole | Enables a member check in the channels to automatically unregister left members |
 | checkRoleInterval | Interval in hours when to check users |
 | token | Bottoken from @Botfather. Only one Possible|
 | admins | Array of IDs of administrators |
-| channels | Array of chat IDs where where users can register in |
 
 ## Geocoding 
 
