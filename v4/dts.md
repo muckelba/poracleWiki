@@ -366,8 +366,8 @@ Any of the fields can be customized with the following:
     "platform": "discord",
     "template": {
       "embed": {
-        "title": "Weather change!",
-        "description": "NB! The weather for some active mons have changed from {{oldweather}} {{oldweatheremoji}} to {{weather}} {{weatheremoji}}!\nThis could have altered the reported IV!"
+        "title": "⚠️ Weather change ⚠️",
+        "description": "The weather for some active Pokémons you are tracking has changed!\n{{#if oldweather}}It went from {{oldweather}} {{oldweatheremoji}} to {{else}}It is now {{/if}}{{weather}} {{weatheremoji}}\n{{#if activePokemons}}The following Pokémons have now changed and will have different stats:\n{{#each activePokemons}}**{{this.name}}** {{#isnt this.formname 'Normal'}} {{this.formname}}{{/isnt}} - {{round this.iv}}% - {{this.cp}}CP\n{{/each}}{{else}}This could have altered the reported stats and IV...{{/if}}"
       }
     }
   },
@@ -379,9 +379,17 @@ Any of the fields can be customized with the following:
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|
 |{{oldweather}}| Weather of the past hour|
-|{{oldweatheremoji}} Weatheremoji of the past hour|
+|{{oldweatheremoji}}| Weatheremoji of the past hour|
 |{{weather}}| Weather of the current hour|
-|{{weatheremoji}} Weatheremoji of the current hour|
+|{{weatheremoji}}| Weatheremoji of the current hour|
+|{{weatherChange}}| an already formed sentence for this weather change|
+|{{weatherCurrent}}| current weather ID|
+|{{weatherCurrentName}}| current weather|
+|{{weatherCurrentEmoji}}| current weather emoji|
+|{{weatherNext}}| weather ID forecast for next hour|
+|{{weatherNextName}}| weather name for next hour|
+|{{weatherNextEmoji}}| weather emoji for next hour|
+|{{weatherChangeTime}}| change time (format HH:00)|
 
 ### Greeting Message
 
