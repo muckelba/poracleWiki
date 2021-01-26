@@ -134,7 +134,7 @@ Available filters:
 |valor|`!raid moltres valor`| Tracks moltres raids where controlling team is valor|
 |form|`!raid exeggutor formalola`| Tracks Exeggutor raids i your area if form is Alolan| 
 |harmony|`!raid venusaur harmony`| Tracks venusaur raids in uncontested gyms|
-|everything|`!raid everything`| Tracks Raids from level 1 - 5|
+|everything|`!raid everything`| Tracks Raids from level 1 - 6|
 |gen|`!raid gen5`| Tracks raids against gen5 pokemon|
 |clean |`!raid snorlax clean` | Automatically deletes the messages as soon as the raid expires |
 
