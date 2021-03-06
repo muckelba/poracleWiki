@@ -27,15 +27,15 @@ Just go ahead and create a new DB user and database:
 If Poracle connects to the database locally, you can give it only local access rights:
    ```sql
    CREATE DATABASE poracle;
-   CREATE USER 'poracle'@'localhost' IDENTIFIED BY 'poraclePassword';
-   GRANT ALL PRIVILEGES ON poracle . * TO 'poracle'@'localhost';
+   CREATE USER 'poracleuser'@'localhost' IDENTIFIED BY 'poraclePassword';
+   GRANT ALL PRIVILEGES ON poracle . * TO 'poracleuser'@'localhost';
    exit
    ```
    
 Alternatively, you can grant your user access from anywhere:
    ```sql
    CREATE DATABASE poracle;
-   CREATE USER 'poracle'@'%' IDENTIFIED BY 'poraclePassword';
-   GRANT ALL PRIVILEGES ON poracle . * TO 'poracle'@'%';
+   CREATE USER 'poracleuser'@'%' IDENTIFIED BY 'poraclePassword';
+   GRANT ALL PRIVILEGES ON poracle . * TO 'poracleuser'@'%';
    exit
    ```
