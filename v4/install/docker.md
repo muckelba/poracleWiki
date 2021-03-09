@@ -8,7 +8,7 @@ grand_parent: v4
 
 # Docker
 
-Note: this is an alternative way to install PoracleJS and not needed if you choose to install it with the "normal" [installation guide](install.html).
+Note: this is an alternative way to install PoracleJS and not needed if you choose to install it with the [manual installation guide](manual).
 
 Disclaimer: This page is using the development branch. If you want to use the master branch, change the image tag in the compose file and adjust the urls of the wget commands.
 
