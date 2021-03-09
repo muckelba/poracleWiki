@@ -6,9 +6,7 @@ parent: v4
 ---
 
 # Config file
-
-Before running PoracleJS for the first time, you need to create a config file. There is an example you can copy over to begin with `cp config/default.json config/local.json`.
-
+The configuration file is how PoracleJS determines how to connect to services and how to configure itself during runtime. The following sections each describe a particular sub-section in the configuration file. After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. You can use [JSONLint](https://jsonlint.com/) to ensure the file is valid JSON. It will attempt to highlight any issues that would cause the file to be invalid JSON.
 
 ## Server
 

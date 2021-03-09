@@ -7,5 +7,4 @@ has_toc: true
 ---
 
 # v4
-
-Thats the Documentation about PoracleJS v4.
+This documentation relates to all things PoracleJS v4.
