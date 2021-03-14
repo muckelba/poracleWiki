@@ -22,6 +22,11 @@ The geofence file can be found at `./config/geofence.json`. The geofence help de
 
 The downloaded file will be your geofence file. You can either copy the contents into the file on the server or upload it. If you are uploading it ensure the file is owned by the user running PoracleJS.
 
+
+## Database
+Depending on your MariaDB version you may run into an issue during the PoracleJS setup with the issue "Specified key was too long; max length is 767 bytes". If you encounter this issue it can be solved by updated the configuration and running a few commands. To see how to solve this problem review the [StackExchange article](https://dba.stackexchange.com/questions/231219/mariadb-10-1-38-specified-key-was-too-long-max-key-length-is-767-bytes).
+
+
 ## Configuration File
 Both installation methods should have a file located at `./config/local.json`. This file will need to be modified to ensure the services are connected together properly.
 
@@ -32,13 +37,11 @@ This step can be skipped for Docker installations
 The first configuration we need to make is to the Database. This section can be found under the key `database`. Make the following changes to this section:
  * client
     * mysql - For use with MariaDB / MySQL databases
-    * pg - For use with PostgreSQL databases
-    * sqlite - For use with SQLite databases
  * conn
     * host - Hostname or IP of the database service. If hosting locally you can use `127.0.0.1`.
     * database - Name of the database during configuration. The example uses the database name `poracle`.
     * user - Username of the account for the database connection. The example uses the username `poracleuser`.
-    * port - Port of the database service. MariaDB and MySQLs default port is `3306`. PostgreSQLs default port is `5432`.
+    * port - Port of the database service. MariaDB and MySQLs default port is `3306`.
 
 ### Notification Service
 You only need to configure the section for your notification service. Each page will go in-depth on how to configure the required elements for receiving data from PoracleJS.
@@ -49,6 +52,6 @@ You only need to configure the section for your notification service. Each page 
 If you wish to utilize maps as part of your notifications you need to configure the section `geocoding`. More information can be found on the [Configuration File](../config_file#geocoding) page.
 
 ### Validating the file
-After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. You can use [JSONLint](https://jsonlint.com/) to ensure the file is valid JSON. It will attempt to highlight any issues that would cause the file to be invalid JSON.
+After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. The default format resembles cJSON which does not have an online linter. You may be able to put it into your browsers developer tools to ensure it is valid JSON.
 
 PoracleJS has now been configured with the required basic information to run. You may want to tinker additional settings but they can all be found on the [Configuration File](../config_file) page.

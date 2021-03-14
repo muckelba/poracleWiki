@@ -11,13 +11,11 @@ In this section we will discuss how to perform a manual installation. Some requi
 
 ## Prerequisites
 PoracleJS requires several prerequisites to operate. The following prerequisites must be installed for PoracleJS to function properly.
- * [NodeJS](https://nodejs.org/en/)
+ * [NodeJS](https://nodejs.org/en/). The supported versions are 12.x and 14.x.
  * [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
  * A databases is required for PoracleJS to operate properly. Only one needs to be configured for PoracleJS to operate correctly.
     * [MariaDB](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04)
     * [MySQL](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04) [MariaDB > MySQL :)]
-    * [PostgreSQL](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-20-04) @TODO - Is this supported in v4?
-    * [SQLite](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-sqlite-on-ubuntu-20-04)
    
 ### Notification Service
 We will need to configure a Discord or Telegram bot to allow PoracleJS to send messages to the required service. Only one bot is required for the configuration. PoracleJS will require the token for the user regardless of the service. This will be highlighted in the individual pages on how to obtain that information.
@@ -30,7 +28,7 @@ A database and user need to be configured for PoracleJS to access the database. 
 
 #### MariaDB / MySQL
 Below are examples of how to create the database and user. Please make sure to use a [strong password](https://passwordsgenerator.net/) for the user. The example password is `poraclePassword`.
-If Poracle connects to the database locally, you can give it only local access rights:
+If PoracleJS connects to the database locally, you can give it only local access rights:
    ```sql
    CREATE DATABASE poracle;
    CREATE USER 'poracleuser'@'localhost' IDENTIFIED BY 'poraclePassword';
@@ -38,7 +36,7 @@ If Poracle connects to the database locally, you can give it only local access r
    exit
    ```
    
-Alternatively, you can grant your user access from anywhere:
+Alternatively, you can grant your user access from anywhere. This allows for remote connections regardless of the originating IP / hostname. Unless you have a need for remote access you should not allow the user to connect from any address.
    ```sql
    CREATE DATABASE poracle;
    CREATE USER 'poracleuser'@'%' IDENTIFIED BY 'poraclePassword';
@@ -46,13 +44,8 @@ Alternatively, you can grant your user access from anywhere:
    exit
    ```
 
-
-#### PostgreSQL
-@TODO
-
-#### SQLite
-If you are using SQLite there is no configuration required for PoracleJS.
-
+### Known Issues
+Depending on your MariaDB version you may run into an issue during the PoracleJS setup with the issue "Specified key was too long; max length is 767 bytes". If you encounter this issue you can review the [Configuration](./configuration#database) page for more information.
 
 ## Installing PoracleJS
 Now that the prerequisites have been installed we can begin installing PoracleJS. There are a few more (optional, but highly recommended) steps to help reduce any potential security vulnerabilities.
@@ -61,7 +54,7 @@ Now that the prerequisites have been installed we can begin installing PoracleJS
 Before we start the installation, we should decide on a user and installation directory to use. The $HOME directory may be the simplest solution, but the *nix conventions we should use `/opt` for unbundled packages (packages not part of the OS distro). We should also not use the user `root` for the installation.
 
 #### Creating a User
-We should never install software or run programs as `root`. This is a security hole that is easy to avoid. You can read more about some of installing as root [here](https://bencane.com/2012/02/20/why-you-should-avoid-running-applications-as-root/). If you already have a user you can skip this step.
+We should never install software or run programs as `root`. This is a security hole that is easy to avoid. You can read more about installing as root [here](https://bencane.com/2012/02/20/why-you-should-avoid-running-applications-as-root/). If you already have a user you can skip this step.
 
 For this example we will be creating a new user, `pogo`, that will be used for running PoracleJS. It will have its home directory in `/home/pogo`.
 ```bash

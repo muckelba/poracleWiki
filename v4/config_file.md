@@ -6,7 +6,8 @@ parent: v4
 ---
 
 # Config file
-The configuration file is how PoracleJS determines how to connect to services and how to configure itself during runtime. The following sections each describe a particular sub-section in the configuration file. After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. You can use [JSONLint](https://jsonlint.com/) to ensure the file is valid JSON. It will attempt to highlight any issues that would cause the file to be invalid JSON.
+## Validating the file
+After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. The default format resembles cJSON which does not have an online linter. You may be able to put it into your browsers developer tools to ensure it is valid JSON.
 
 ## Server
 
@@ -50,8 +51,8 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 
 | Option        | Value         | 
 | ------------- |---------------|
-| client | Database type. Available options are: `pg` for postgresql, `mysql` for MySQL or MariaDB and `sqlite` |
-| conn | Database credentials. Not needed when using `sqlite` |
+| client | Database type. Available options are: `mysql` for MySQL or MariaDB
+| conn | Database credentials.
 
 ## Locale
 {% raw %}
