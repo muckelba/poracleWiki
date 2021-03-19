@@ -246,6 +246,10 @@ Command to remove webhook and all of its trackings.
 
 `!area remove namesomething Berlin Moskau`
 
+### Tracked command with webhooks
+
+`!tracked namesomething`
+
 ### Examples:
 
 Mons:
@@ -262,6 +266,9 @@ Eggs:
 
 Invasions:
 `!invasion male female nameinvasion`
+
+Tracked:
+`!tracked nameveryrare`
 
 **Make sure to use only letters and no numbers in the webhook name!**
 
