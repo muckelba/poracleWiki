@@ -90,7 +90,7 @@ available filters:
 |           |`!track pikachu`                 | No filters, tracks pikachu within an area you are tracking in |
 |d          |`!track pikachu d750`            | Tracks pikachu within 750 meters of location |
 |iv         |`!track pikachu iv90`            | Tracks pikachu inside a tracked area with a minimum IV of 90%  |
-|maxiv      |`!track pikachu maxiv0`          | Tracks pikachu with 0% IV   |
+|maxiv      |`!track pikachu iv0 maxiv0`      | Tracks pikachu with 0% IV. Not encountered mons have IV set to -1 so `iv0` is needed otherwise it would trigger on maxiv0 (-1<0) |
 |cp         |`!track shuckle cp300`           | Tracks shuckle with a minimum CP of 300|
 |form       |`!track unown forma formquestion`| Tracks unown with questionmark form or form A. Can only be used with one monster at a time. Monster needs to have forms|
 |maxcp      |`!track shuckle maxcp400`        | Tracks shuckle with a maximum CP of 400 |
