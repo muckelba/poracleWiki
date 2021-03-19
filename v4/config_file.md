@@ -6,9 +6,8 @@ parent: v4
 ---
 
 # Config file
-
-Before running PoracleJS for the first time, you need to create a config file. There is an example you can copy over to begin with `cp config/default.json config/local.json`.
-
+## Validating the file
+After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. The default format resembles cJSON which does not have an online linter. You may be able to put it into your browsers developer tools to ensure it is valid JSON.
 
 ## Server
 
@@ -52,8 +51,8 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 
 | Option        | Value         | 
 | ------------- |---------------|
-| client | Database type. Available options are: `pg` for postgresql, `mysql` for MySQL or MariaDB and `sqlite` |
-| conn | Database credentials. Not needed when using `sqlite` |
+| client | Database type. Available options are: `mysql` for MySQL or MariaDB
+| conn | Database credentials.
 
 ## Locale
 {% raw %}

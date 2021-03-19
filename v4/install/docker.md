@@ -1,13 +1,14 @@
 ---
-title: Docker
+title: Docker Installation
 nav_order: 2
 layout: default
-parent: v4
+parent: Installation
+grand_parent: v4
 ---
 
 # Docker
 
-Note: this is an alternative way to install PoracleJS and not needed if you choose to install it with the "normal" [installation guide](install.html).
+Note: this is an alternative way to install PoracleJS and not needed if you choose to install it with the [manual installation guide](manual).
 
 Disclaimer: This page is using the development branch. If you want to use the master branch, change the image tag in the compose file and adjust the urls of the wget commands.
 
@@ -78,3 +79,5 @@ This will start the two containers in detached mode so they can run on thier own
 
 You need to restart (`down` and `up`) after updating.  
 `docker-compose pull` 
+
+Congratulations! PoracleJS has been installed but we still need to configure the services to work together. Let's move onto the [configuration](./configuration) next.
