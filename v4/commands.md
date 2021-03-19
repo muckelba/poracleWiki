@@ -119,22 +119,22 @@ Any monster name can be used in the same command or alternatively `!untrack ever
 
 ### !raid
 
-`!raid snorlax d1000 instinct` This command would add tracking for Snorlax raids within 1 km or within a tracked area if the gym is controlled by team Instinct
+`!raid snorlax d1000 instinct` This command would add tracking for Snorlax raids within 1000 meters or within a tracked area if the gym is controlled by team Instinct
 
 Available filters:
 
 | Filter    | Example                        | More words  |
 | --------- |:------------------------------:| -----------:|
 ||`!raid snorlax`| No filters, snorlax raids within your tracked area|
-|d|`!raid snorlax d1000`| Tracks snorlax raids within a kilometer|
-|ex|`!raid ex level5 d1000`| Tracks all level 5 raids in an ex eligible gym within a kilometer, can only be used with no monsters in the command|
-|level|`!raid level5 d1000`| Tracks all level 5 raids within a kilometer, can only be used with no monsters in the command|
+|d|`!raid snorlax d1000`| Tracks snorlax raids within 1000 meters|
+|ex|`!raid ex level5 d1000`| Tracks all level 5 raids in an ex eligible gym within 1000 meters, can only be used with no monsters in the command|
+|level|`!raid level5 d1000`| Tracks all level 5 raids within 1000 meters, can only be used with no monsters in the command|
 |instinct|`!raid zapdos instinct`| Tracks zapdos raids where controlling team is Instinct|
 |mystic|`!raid articuno mystic`| Tracks articuno raids where controlling team is mystic|
 |valor|`!raid moltres valor`| Tracks moltres raids where controlling team is valor|
 |form|`!raid exeggutor formalola`| Tracks Exeggutor raids i your area if form is Alolan| 
 |harmony|`!raid venusaur harmony`| Tracks venusaur raids in uncontested gyms|
-|everything|`!raid everything`| Tracks Raids from level 1 - 5|
+|everything|`!raid everything`| Tracks Raids from level 1 - 6|
 |gen|`!raid gen5`| Tracks raids against gen5 pokemon|
 |clean |`!raid snorlax clean` | Automatically deletes the messages as soon as the raid expires |
 
@@ -145,20 +145,20 @@ Available filters:
 
 ### !egg 
 
-`!egg level5 d10000` Tracks level 5 raid eggs within 10 kilometers. Command must include a level.
+`!egg level5 d1000` Tracks level 5 raid eggs within 1000 meters. Command must include a level.
 
 Available filters:
 
 | Filter    | Example                        | More words  |
 | --------- |:------------------------------:| -----------:|
 ||`!egg level5`| No filters, level 5 eggs within your tracked area|
-|d|`!egg level4 d1000`| Tracks level 4 eggs within a kilometer|
-|ex|`!egg level4 ex d1000`| Tracks level 4 eggs in an ex eligible gym within a kilometer|
+|d|`!egg level4 d1000`| Tracks level 4 eggs within 1000 meters|
+|ex|`!egg level4 ex d1000`| Tracks level 4 eggs in an ex eligible gym within 1000 meters|
 |instinct|`!egg level3  instinct`| Tracks level 3 eggs where controlling team is Instinct|
 |mystic|`!egg level2 mystic`| Tracks level 2 eggs where controlling team is mystic|
 |valor|`!egg level1 valor`| Tracks level 1 eggs controlling team is valor|
 |harmony|`!egg level5 harmony`| Tracks level 5 eggs in uncontested gyms|
-|everything|`!egg everything`| Tracks Raids from level 1 - 5|
+|everything|`!egg everything`| Tracks Raids from level 1 - 6|
 |clean |`!egg level5 clean` | Automatically deletes the messages as soon as the egg expires |
 
 ### !egg remove
@@ -168,7 +168,7 @@ Level is required to remove egg tracking.
 
 ### !quest
 
-`!quest pikachu poke ball stardust d10000` Tracks quests that would reward a pikachu, pokéballs or stardust within 10km
+`!quest pikachu poke ball stardust d1000` Tracks quests that would reward a pikachu, pokéballs or stardust within 1000 meters
 
 Available filters:
 
@@ -177,8 +177,8 @@ Available filters:
 |all pokemon|`!quest all pokemon`| tracks quests for all pokemon rewards within your area|
 |gen|`!quest gen5`| tracks quests for all gen5 pokemon rewards within your area|
 |all items|`!quest all items`| tracks quests for all item rewards within your area|
-|d|`!quest snorlax d50`| Tracks Snorlax awarding quests within 50m of set location|
-|stardust|`!quest stardust d1000`| Tracks quests within 1km that awards stardust|
+|d|`!quest snorlax d50`| Tracks Snorlax awarding quests within 50 meters of set location|
+|stardust|`!quest stardust d1000`| Tracks quests within 1000 meters that awards stardust|
 
 
 ### !quest remove
@@ -188,7 +188,7 @@ Removes quest tracking for all pokemon, pinap berries and strdust.
 
 ### !invasion
 
-`!invasion fire mixed d1000` Tracks all invasions of mixed AND fire types on pokestops within 1 km
+`!invasion fire mixed d1000` Tracks all invasions of mixed AND fire types on pokestops within 1000 meters
 `!invasion rock female` Tracks all rock invasions where the grunt is a female
 
 Available filters:  
@@ -197,7 +197,7 @@ Available filters:
 | --------- |:------------------------------:| -----------:|
 |all types|`!invasion `| tracks any invasions within your area|
 |(typeName or mixed)|`!invasion mixed fire water rock ground`| tracks invasions of specific type within your area. Any of the 18 types are possible + the mixed type that is invasions where the typing is unknown/random|
-|d|`!invasion d50`| Tracks invasions within 50m of set location|
+|d|`!invasion d50`| Tracks invasions within 50 meters of set location|
 |female or male|`!invasion female`| Tracks only female or male invasions|
 |remove|`!invasion remove`| Removes all alerts|
 |clean |`!invasion mixed clean` | Automatically deletes the messages as soon as the invasion expires |
