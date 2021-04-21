@@ -12,7 +12,7 @@ Third Party apps used to enchnace the funcationalty of PorcaleJS
 
 https://github.com/123FLO321/SwiftTileserverCache
 
-## TileServer MIddleman
+## TileServer Middleman
 - show nearby stops/gyms on staticmaps
 - hosts staticmaps on discord's cdn: faster loading & hiding your url
 - supports templates, post/get requests, json input, url arg input, multistaticmaps - basically any kind of input your tileserver would also accept
