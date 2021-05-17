@@ -12,7 +12,7 @@ Note that some Pokemon are available from scanners without IV details. Poracle w
 of -1 in filtering decisions - specifiying a minimum iv of 0 (ie iv0) will exclude these.
 
 | Filter    | Example                         | Description  |
-|----------|:-------------------------------:|------------:|
+|----------|-------------------------------|------------|
 |           |`!track pikachu`<br>`!track 2 3 4` | No filters, tracks listed pokemon within an area you are tracking in.  Tracking of pokemon can be by name or pokedex number|
 |d          |`!track pikachu d750`            | Tracks pikachu within 750 meters of your !location |
 |iv         |`!track pikachu iv90`            | Tracks pikachu inside a tracked area with a minimum IV of 90%  |
@@ -30,18 +30,8 @@ of -1 in filtering decisions - specifiying a minimum iv of 0 (ie iv0) will exclu
 |form||
 |t|
 |rarity||1-6 or [ ... ultra-rare, unseen]|
-|maxrarity|
-    "rarity": {
-        "1": "Common",
-        "2": "Uncommon",
-        "3": "Rare",
-        "4": "Very-Rare",
-        "5": "Ultra-Rare",
-        "6": "Unseen"
-    },
+|maxrarity| common, uncommon, rare, very-rare, ultra-rare, unseen|
 |greatcp|
-|"
-
 |clean|
 |template|
 
