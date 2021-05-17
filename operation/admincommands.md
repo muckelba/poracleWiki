@@ -49,11 +49,11 @@ or [Discord](discord.md) pages for details specific to the endpoint
 
 # autocreate 
 
-Discord only, this allows you to create categories and channels automatically.  See [Discord](discord.md)
+Discord only, this allows you to create categories and channels automatically.  See [Discord](../configuration/discord.md)
 
 # webhook
 
-Discord only, this allows you to create categories and channels automatically.  See [Discord](discord.md)
+Discord only, this allows you to create categories and channels automatically.  See [Discord](../configuration/discord.md)
 
 # userXXXX *run s a user*
 

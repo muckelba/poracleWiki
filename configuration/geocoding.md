@@ -7,10 +7,10 @@ parent: Configuration
 
 # Geocoding
 
-Poracle supports two different geocoding services for displaying addresses in your DTS by using `{{addr}}`, `{{streetNumber}}`, `{{streetName}}`, `{{zipcode}}`, `{{country}}`, `{{countryCode}}`, `{{city}}`, `{{state}}`, `{{stateCode}}` and `{{neighbourhood}}`. Setting it to `none` will set those fields to `unknown` but
+Poracle supports two different geocoding services for displaying addresses in your DTS by using ```{{addr}}```, ```{{streetNumber}}```, ```{{streetName}}```, ```{{zipcode}}```, ```{{country}}```, ```{{countryCode}}```, ```{{city}}```, ```{{state}}```, ```{{stateCode}}``` and ```{{neighbourhood}}```. Setting it to `none` will set those fields to `unknown` but
 will remove any third party dependency
 
-```json5
+```json
   "geocoding": {
     //  provider, providerURL - these are used for address lookups. Can be 'none',
     //   'nominatim' for a local nominatim installation (recommended) https://github.com/mediagis/nominatim-docker

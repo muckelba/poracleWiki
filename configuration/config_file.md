@@ -6,6 +6,12 @@ parent: Configuration
 ---
 
 # Config file
+
+Poracle's main configuration file is `local.json`. You will also notice a 
+`default.json` in the config directory. This is updated by the developers and
+should not be changed - Poracle will first look to your local.json file and then
+if it can't find a setting the reasonable defaults provided by default.json
+
 ## Validating the file
 After making changes to the file we should ensure it is valid JSON. If it is not valid JSON PoracleJS will not start. The default format resembles cJSON which does not have an online linter. You may be able to put it into your browsers developer tools to ensure it is valid JSON.
 
@@ -21,7 +27,7 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 | ipBlacklist| Array of IPs that are not able to send webhooks|
 
 ## General
-{% raw %}
+
 | Option        | Value         | 
 | ------------- |---------------| 
 | environment | That's for development purposes. Only change it if you know what you are doing|
@@ -38,7 +44,6 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 | disableQuest | Set to true to disable processing of quests|
 | disablePokemon | Set to true to disable processing of weather|
 | roleCheckDeletionsAllowed | Set to true to delete users from the PoracleJS database when they lose access|
-{% endraw %}
 
 ## Logger
 
@@ -138,7 +143,7 @@ The tiers of IV colors are as follows:
 | channels | Array of chat IDs where where users can register in |
 | checkRole | Enables a member check in the channels to automatically unregister left members |
 | checkRoleInterval | Interval in hours when to check users |
-| token | Bottoken from @Botfather. Only one Possible|
+| token | Bot-token from @Botfather. Only one Possible|
 | admins | Array of IDs of administrators |
 
 ## Geocoding 

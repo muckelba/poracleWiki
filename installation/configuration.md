@@ -1,5 +1,5 @@
 ---
-title: Configuration
+title: Basic Configuration
 nav_order: 3
 layout: default
 parent: Installation
@@ -44,6 +44,7 @@ The first configuration we need to make is to the Database. This section can be 
 
 ### Configurating your scanner
 
+See [Scanner](scanner.md) scanner
 
 ### Notification Service
 You only need to configure the section for your notification service. Each page will go in-depth on how to configure the required elements for receiving data from PoracleJS.
