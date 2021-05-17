@@ -6,21 +6,40 @@ parent: Configuration
 ---
 
 
-Handlebars functions
+##Handlebars functions
 
-{{numberFormat xx 2}}
-{{calculateCp}}
-{{pokemonBaseStats}}
-{{getPowerUpCost}}
-{#getPowerUpCost 5 10}}Candy - {{candy}} Stardust - {{stardust}}{{/getPowerUpCost}}
+###{{numberFormat xx 2}} or {{toFixed xx 2}}
 
-{{map}}
+Format a number to a given number of decimal places
 
-{{concat}}
-{{pad0}}
-{{map}}
+###{{calculateCp}}
 
-There's a new mapping function.  Define a map in the customMaps folder like this --
+{{calculateCp baseStats 20 15 15 15}}
+
+###{{pokemonBaseStats}}
+
+{{calculateCp (pokemonBaseStats 2) 20 15 15 15}}
+
+###{{getPowerUpCost}}
+
+`{{getPowerUpCost}}` will give a text string
+
+or can be used in it's constituent parts eg:
+```
+{{#getPowerUpCost 5 10}}Candy - {{candy}} Stardust - {{stardust}}{{/getPowerUpCost}}
+```
+
+###{{concat}}
+
+`{{concat pokemonId '_' formId}}` would give 5_0
+
+###{{pad0}}
+
+`{{pad0 pokemonId}}` would pad to three digits eg 021
+
+###{{map}}
+
+Poracle contains a generalised mapping function.  Define a map in the customMaps folder like this --
 ```json5
 {
   "name": "raidCounters",
@@ -40,20 +59,25 @@ There's a new mapping function.  Define a map in the customMaps folder like this
     }
 }
 ```
-And you can then use it in your DTS to map from anything to anything - eg in this example pokemon Id maps to trainers and the counters for advanced raid displays.  You use it like this: {{#map 'raidCounters' pokemonId}}Trainers needed: {{trainers}} Best counters: {{{counters}}}{{/map}}. If you have a single value you map to you can just use {{map 'name' value}} rather than having subvariables.  I hope people will come up with some imaginative mappings and share them (we have a defaults/customMaps folder so we can ship some cool ones!)
+And you can then use it in your DTS to map from anything to anything - eg in this example pokemon Id maps to trainers and the counters for advanced raid displays.  You use it like this: `{{#map 'raidCounters' pokemonId}}Trainers needed: {{trainers}} Best counters: {{{counters}}}{{/map}}`. If you have a single value you map to you can just use `{{map 'name' value}}` rather than having subvariables.  
 
-{{... calculate stardust }}
+I hope people will come up with some imaginative mappings and share them (we have a defaults/customMaps folder so we can ship some cool ones!)
 
-handlebars helpers
+##handlebars helpers
 
-{{#each}}
+###{{if}}
 
-eg {{#each matched}}{{map 'arealist' this}}{{/each}}
+`{{#if verified}}Verified{{else}}Not verified{{/if}}`
 
-{{compare}}
+###{{#each}}
+
+eg `{{#each matched}}{{map 'arealist' this}}{{/each}}`
+to use a map for each area name to more descriptive text
+
+###{{compare}}
 
 
-{{join}}
+###{{join}}
 
-{{eq}}
+###{{eq}}
 
