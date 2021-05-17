@@ -3,7 +3,6 @@ title: Manual Installation
 nav_order: 1
 layout: default
 parent: Installation
-grand_parent: v4
 ---
 
 # Manual Installation

@@ -1,3 +1,11 @@
+---
+title: !track
+nav_order: 3
+layout: default
+parent: English
+grand_parent: User Guide
+---
+
 ## `!track` in detail
 
 Note that some Pokemon are available from scanners without IV details. Poracle will treat these as having an IV

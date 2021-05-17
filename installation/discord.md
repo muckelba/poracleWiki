@@ -1,6 +1,9 @@
-
 ---
-
+title: Discord
+nav_order: 3
+layout: default
+parent: Installation
+---
 
 # Create a discord bot and record the token
 

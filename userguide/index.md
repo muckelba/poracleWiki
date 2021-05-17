@@ -1,5 +1,5 @@
 ---
-title: Userguide
+title: User Guide
 nav_order: 4
 layout: default
 has_children: true

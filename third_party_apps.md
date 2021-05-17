@@ -23,11 +23,11 @@ Third Party apps used to enchnace the funcationalty of PorcaleJS
 ## [Nominatim](https://github.com/mediagis/nominatim-docker)
 * Provide a local installation of a geolocation (address) lookup 
 
-## Facebook Messenger Gateway
+## [Facebook Messenger Gateway](https://github.com/jfberry/poracle-facebook-hook)
 
 * Acts as a webhook intermediary to post to Facebook messenger groups
 
-## Nest Watcher
+## [Nest Watcher](https://ccev.github.io/nestwatcher/)
 
 * Scans MAD or RDM database for nests
 * Posts details to Poracle to allow nest alerts to work

@@ -3,7 +3,7 @@ title: Filtering Options
 nav_order: 3
 layout: default
 parent: English
-grand_parent: v3 Userguide
+grand_parent: User Guide
 ---
 
 # Filtering Options

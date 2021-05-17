@@ -1,4 +1,9 @@
-
+---
+title: Telegram
+nav_order: 3
+layout: default
+parent: Installation
+---
 # Create a telegram bot and record the token
 
 # Configure basic telegram settings

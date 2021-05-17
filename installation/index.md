@@ -2,7 +2,6 @@
 title: Installation
 nav_order: 1
 layout: default
-parent: v4
 has_children: true
 has_toc: true
 ---

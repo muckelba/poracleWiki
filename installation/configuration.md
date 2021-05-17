@@ -3,7 +3,6 @@ title: Configuration
 nav_order: 3
 layout: default
 parent: Installation
-grand_parent: v4
 ---
 # Configuration
 Since PoracleJS requires several services we need to configure them to work together. Some sections will not apply to the Docker configuration, and they will be identified as such. We will go over a basic configuration to get PoracleJS running. After all changes are made to the file the PoracleJS process will need to be restarted to take effect.

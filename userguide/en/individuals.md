@@ -3,7 +3,7 @@ title: Poracle for Individuals
 nav_order: 2
 layout: default
 parent: English
-grand_parent: v3 Userguide
+grand_parent: User Guide
 ---
 
 # Poracle for Individuals
