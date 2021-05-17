@@ -1,3 +1,11 @@
+---
+title: DTS Templates (Advanced)
+nav_order: 6
+layout: default
+parent: Configuration
+---
+
+
 Handlebars functions
 
 {{numberFormat xx 2}}

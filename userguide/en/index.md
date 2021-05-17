@@ -4,7 +4,7 @@ nav_order: 2
 layout: default
 has_children: true
 has_toc: true
-parent: v3 Userguide
+parent: Userguide
 ---
 
 # Poracle

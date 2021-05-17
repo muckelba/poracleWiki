@@ -1,3 +1,9 @@
+---
+title: Internationalisation
+nav_order: 6
+layout: default
+parent: Configuration
+---
 
 ### Single language
 
@@ -5,7 +11,7 @@
 
 ### Configuration
 
-```json
+```json5
      "availableLanguages": {
         "en": {"poracle": "poracle", "help": "help" },
         "de": {"poracle": "dasporacle", "help": "hilfe" },

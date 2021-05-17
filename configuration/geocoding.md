@@ -2,7 +2,7 @@
 title: Geocoding
 nav_order: 5
 layout: default
-parent: v4
+parent: Configuration
 ---
 
 # Geocoding

@@ -1,3 +1,10 @@
+---
+title: Discord
+nav_order: 6
+layout: default
+parent: Configuration
+---
+
 Discord support uses a bot (see [Bot](../discordbot.md) on how to configure) to send alerts
 to users. It can also use this bot to message channels, or you can use a webhook.
 

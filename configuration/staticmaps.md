@@ -1,8 +1,8 @@
 ---
-title: Staticmaps
+title: Map tiles (static maps)
 nav_order: 6
 layout: default
-parent: v4
+parent: Configuration
 ---
 
 Poracle can be configured in a variety of different ways to support

@@ -1,4 +1,9 @@
-
+---
+title: Log files
+nav_order: 4
+layout: default
+parent: Operation
+---
 # Poracle Log files
 
 Poracle stores it's log files in the `./logs` folder. It divides up the log messages for
@@ -15,7 +20,7 @@ easy traceability:
 
 # Configuration
 
-```json
+```json5
   "logger": {
     "consoleLogLevel": "verbose",       // this is the level displayed on the screen (and perhaps in pm2 or systemd logs if you run that way)
     "logLevel": "verbose",              // this is the log level on disk, affecting all logs

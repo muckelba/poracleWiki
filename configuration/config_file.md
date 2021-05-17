@@ -2,7 +2,7 @@
 title: Config File
 nav_order: 4
 layout: default
-parent: v4
+parent: Configuration
 ---
 
 # Config file

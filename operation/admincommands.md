@@ -1,3 +1,10 @@
+---
+title: Commands (Admin)
+nav_order: 6
+layout: default
+parent: Operation
+---
+
 Note that the `!` prefix is used throughout this page; simply swap this for '/' for telegram, 
 or however you have configured your discord prefix
 

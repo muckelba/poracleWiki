@@ -1,8 +1,8 @@
 ---
-title: Commands
-nav_order: 8
+title: Commands (Full details)
+nav_order: 5
 layout: default
-parent: v4
+parent: Operation
 ---
 
 # Commands

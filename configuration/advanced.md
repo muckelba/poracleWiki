@@ -1,4 +1,9 @@
-
+---
+title: Other Settings (Advanced)
+nav_order: 6
+layout: default
+parent: Configuration
+---
 ### Pokemon aliasing
 
 The `pokemonAlias.json` file provides a mechanism for aliasing commonly mis-spelt pokemon.
