@@ -1,3 +1,34 @@
+---
+title: Commands
+nav_order: 1
+layout: default
+parent: Poracle Web
+---
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/bbdoc/PoracleWeb.git
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+3. Copy `config_example.php` to `config.php` and adapt to your needs
+4. Have a Web Server pointing to your install directory (This tool doesn't include any standalone WebServer)
+
+5. You will need to configure your Discord Bot settings in config.php. If you use PMSF, you can reuse the same parameters for `discordBotClientId` and `discordBotClientSecret` or find them on the [Discord application Portal](https://discord.com/developers/applications). `redirect_url` should point to your PoracleWeb base directory and should be configured as a Redirects in your Discord bot.
+
+For those parameters go to :
+- [Discord application Portal](https://discord.com/developers/applications)
+- Select your Bot (or create a new one).
+- Go to OAuth2 and add your `https://yourdomain.com/discord_auth.php` (`https://yourdomain.com`) being your `redirect_url`
+- Client ID can be found under "General Information"
+- Client Secret can be found under "General Information" by clicking the "Click to reveal" link.
+
+
+
 ### Configurating API in Poracle
 
 

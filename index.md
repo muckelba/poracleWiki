@@ -29,12 +29,3 @@ Some features include:
 * Multiple community (area) security allowing control over different areas with different security
 * Templated creation of alert-channels to allow easy support of new areas
 * Rarity calculation 
-
-## Older versions
-
-Head over to [v3](v3) or [v4](v4) for the respective version you are using.
-
-## Current Situation
-- Geocoding and Staticmaps served by `poracle` are not not working as the public server is not available. You can host them on your own:
-    - [Geocoding](https://github.com/mediagis/nominatim-docker)
-    - [Tileserver](https://github.com/123FLO321/SwiftTileserverCache)
