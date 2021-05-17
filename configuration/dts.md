@@ -1,6 +1,6 @@
 ---
 title: Customize Alarm Messages
-nav_order: 7
+nav_order: 4
 layout: default
 parent: Configuration
 ---

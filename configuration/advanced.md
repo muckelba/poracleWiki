@@ -9,7 +9,12 @@ parent: Configuration
 The `pokemonAlias.json` file provides a mechanism for aliasing commonly mis-spelt pokemon.
 It currently has an English focus, but you can update your local copy.  Contributions for
 good additions will certainly be considered for more widespread distribution so please
-share!
+share
+
+### Shortened URLs
+
+Wrap in `<S<` and `>S>` for Poracle to pass the URL through a shortener
+(currently only *xxxxx* is supported)
 
 ### Changing discord emoticons
 

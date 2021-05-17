@@ -1,6 +1,6 @@
 ---
 title: Commands (Admin)
-nav_order: 6
+nav_order: 2
 layout: default
 parent: Operation
 ---

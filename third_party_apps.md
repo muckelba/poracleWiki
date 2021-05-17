@@ -5,7 +5,7 @@ layout: default
 ---
 
 # Third Party Apps
-Third Party apps used to enchnace the funcationalty of PorcaleJS
+Third Party apps used to enhance the functionality of PorcaleJS
 
 ## [SwiftTileserverCache](https://github.com/123FLO321/SwiftTileserverCache)
 
@@ -33,6 +33,14 @@ Third Party apps used to enchnace the funcationalty of PorcaleJS
 * Posts details to Poracle to allow nest alerts to work
 
 ## Geofence designers
+
+* http://geo.jasparke.net/
+
+## User map files
+
+* [Shiny Possible?](https://github.com/jms412/PkmnShinyMap)
+
+## Other
 
 * [Unicode surrogate pair calculator](http://www.russellcottrell.com/greek/utilities/SurrogatePairCalculator.htm)
 

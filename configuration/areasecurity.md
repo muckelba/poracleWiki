@@ -1,6 +1,6 @@
 ---
 title: Per-area security (Communities)
-nav_order: 6
+nav_order: 10
 layout: default
 parent: Configuration
 ---

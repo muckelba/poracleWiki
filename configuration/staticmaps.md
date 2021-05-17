@@ -1,6 +1,6 @@
 ---
 title: Map tiles (static maps)
-nav_order: 6
+nav_order: 7
 layout: default
 parent: Configuration
 ---
