@@ -28,6 +28,19 @@ Set your local.json with the following options:
 
 # Start Poracle
 
+Once you start poracle for this first time you should
+
 # Register with poracle
 
-Go to your registration channel and issue the !poracle command
+Go to your registration channel and issue the !poracle command, you should get
+a direct message from Poracle welcoming you
+
+# Try some basic tracking
+
+* `!location lat, lon` - set your location to the middle of your area
+* `!track everything iv75 d1000` - track all iv95 pokemon within a 1km area
+
+When you are done:
+* `!untrack everything'
+
+

@@ -50,7 +50,8 @@ Example commands:
 
 Note that as soon as you use roleIds this template becomes guild specific so careful use of this feature is needed if poracle is in multiple guilds (see petap0ws comment below on how it can be used)
 
-```[
+```json
+[
   {
     "name":"newSection",
     "definition":{
@@ -92,4 +93,5 @@ Note that as soon as you use roleIds this template becomes guild specific so car
       ]
     }
   }
-]```
+]
+```

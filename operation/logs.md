@@ -20,7 +20,7 @@ easy traceability:
 
 # Configuration
 
-```json5
+```json
   "logger": {
     "consoleLogLevel": "verbose",       // this is the level displayed on the screen (and perhaps in pm2 or systemd logs if you run that way)
     "logLevel": "verbose",              // this is the log level on disk, affecting all logs

@@ -42,10 +42,13 @@ The first configuration we need to make is to the Database. This section can be 
     * user - Username of the account for the database connection. The example uses the username `poracleuser`.
     * port - Port of the database service. MariaDB and MySQLs default port is `3306`.
 
+### Configurating your scanner
+
+
 ### Notification Service
 You only need to configure the section for your notification service. Each page will go in-depth on how to configure the required elements for receiving data from PoracleJS.
- * [Discord](../config_file#discord)
- * [Telegram](../config_file#telegram)
+ * [Discord](discord)
+ * [Telegram](#telegram)
 
 ### Geocoding
 If you wish to utilize maps as part of your notifications you need to configure the section `geocoding`. More information can be found on the [Configuration File](../config_file#geocoding) page.

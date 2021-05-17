@@ -12,8 +12,3 @@ PoracleJS has two documented install paths, manual and docker. Both options prov
 
  * [Manual](manual)
  * [Docker](docker)
-
-# Optional
-The following set of software is not required but helpful for PoracleJS
- * StaticMap service - Useful for rendering maps from your local system
-   * [TileServerCache](../staticmaps#tileservercache)

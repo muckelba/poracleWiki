@@ -20,7 +20,6 @@ by type.  There are some example additional languages, and some help text in `./
 
 ## Anatomy of a DTS entry
 
-{% raw %}
 ```json
 {
   "id": 1,
