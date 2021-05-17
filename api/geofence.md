@@ -2,7 +2,7 @@
 title: Geofence
 nav_order: 2
 layout: default
-parent: Configuration
+parent: API
 ---
 
 # Generate map of a geofence

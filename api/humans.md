@@ -2,7 +2,7 @@
 title: Humans
 nav_order: 3
 layout: default
-parent: Configuration
+parent: API
 ---
 
 # Get details of a human configuration

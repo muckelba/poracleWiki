@@ -2,7 +2,7 @@
 title: Configuration
 nav_order: 1
 layout: default
-parent: Configuration
+parent: API
 ---
 
 # Get configuration values used by PoracleWeb
