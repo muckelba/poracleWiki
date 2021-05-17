@@ -7,13 +7,87 @@ parent: v4
 
 # Custom Messages
 
+One of Poracle's greatest strengths is its ability to deliver a very configurable set of alarm
+messages.  These are configured through the dts files.
+
+The main dts configuration is stored in `./config/dts.json` - and the latest example 'starting'
+dts is in `./config/defaults/dts.json`. If you don't have a dts file in your config directory, this will
+be copied there to get you started.
+
+The complete DTS will be this file, plus all files in the ./config/dts folder.  This enables
+you to split our your DTS into files for individual editting - for example, by language or
+by type.  There are some example additional languages, and some help text in `./config/defaults/dts`
+
+## Anatomy of a DTS entry
+
+{% raw %}
+```json
+{
+  "id": 1,
+  "type": "monster",
+  "language": "en",
+  "default": true,
+  "platform": "discord",
+  "template": {
+    
+  }
+}
+```
+The `type` can be one of the following
+
+| type | Description |
+|------|-------------|
+| monster | Alert template for pokemon with IV |
+| monsterNoIv | Alert template for pokemon without IV |
+| egg | 
+| raid | 
+| quest | Alert template for quests |
+| greeting |
+| help |
+| weatherchange | Sent to users tracking pokemon affected by a weather change |
+| nest |
+
+The `platform` should be one of **discord** or **telegram**.
+Language is used under multi-lingual configuration to support different 
+templates for each language. If you have just a single language just make sure
+this matches your configured locale.
+
+The `id` is the template id. When a user or administrator sets up a new
+alarm, the default id is set - which is usually '1' (this can be changed
+in your config file).   This can be overridden on the track command eg `!track
+everything iv100 templatehundo` - this would try to pick a template with an id
+of "hundo".  The first entry with `default` true will be used if a template
+can't be matched exactly.
+
 ## dts.json
 
-All alarm messages can be customized via the `./config/dts.json` file.  
-
+## Discord
 A useful visualizer can be found [HERE](https://leovoel.github.io/embed-visualizer/) 
 
+TODO: insert picture of an alert explaining sections
+
+## Telegram
+
+```json
+    "template": {
+      "content": "...",
+      "sticker": "...",
+      "location": true,
+      "webpage_preview": true
+    }
+```
+
+| content | This is where the main message content is |
+| sticker | This is a URL for a telegram sticker that will be included ahead of the message |
+| location | true/false - whether to include a telegram map |
+| webpage_preview | true/false - whether to provide previews of embedded URL elements |
+
+Since handlebars was originally designed for use on web pages, when you use a field
+eg {{name}} it will encode characters that need special treatment on web pages - eg
+<, >, &.  You can avoid this by using three brackets - eg {{{name}}}
+
 Sometimes it's necessary to use three curly braces on each side. This avoids url encoding for fields that need an url. You can do all kinds of fancy handlebar magic, read more about that [HERE][https://github.com/helpers/handlebars-helpers].
+
 
 ### Monster alarms
 {% raw %}
@@ -62,17 +136,24 @@ Any of the fields can be customized with the following:
 
 | Option        | Value         | 
 | --------------- |:-------------:|
-|{{id}}| Pokemon Id|
-|{{name}}| Monsters name|
+|{{pokemonId}}<br>{{id}}| Pokemon Id|
+|{{name}}| Pokemon name (localised)|
+|{{nameEng}}| Name of pokemon (english)
+|{{encounterId}}| The encounter id from the scanner |
+|{{generation}}| Generation number of pokemon |
+|{{formName}}| Monsters form (localised)|
+|{{formNameEng}}| Monsters form (english)|
+|{{formId}}| Form id|
 |{{time}}| Disappear time|
 |{{tthh}}| Full hours until hidden|
 |{{tthm}}| Full minutes until hidden|
 |{{tths}}| Full seconds until hidden|
 |{{verified}}| True/False if disappear timestamp is verified|
+|{{#if verified}}Verified{{else}}Not verified{{/if}}| Example verified|
 |{{now}}| Current Timestamp|
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|
-|{{addr}}| Address of the alerted location|
+|{{addr}}| String ddress of the alerted location|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
 |{{zipcode}}| Zip code of the alerted location|
@@ -82,31 +163,65 @@ Any of the fields can be customized with the following:
 |{{state}}| State name of the alerted location|
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{neighbourhood}}| Neighbourhood of the alerted location|
-|{{quickMove}}| Monsers quick move (alt: {{moveName move_1}} )|
-|{{chargeMove}}| Monsters charge move (alt: {{moveName move_2}} )|
-|{{move1emoji}}| Monsers quick move type emoji|
-|{{move2emoji}}| Monsters charge move type emoji|
-|{{iv}}| Monsters Individual Value Precentage|
+|{{quickMoveId}}| Monsters quick move (alt: {{moveName move_1}} )|
+|{{quickMoveName}} | Monster's quick move name (localised)|
+|{{quickMoveNameEng}} | Monster's quick move name (english)|
+|{{quickMoveEmoji}} | Monster's quick move emoji|
+|{{chargeMoveId}}| Charge move id|
+|{{chargeMoveName}}| Monsters charge move (localised)|
+|{{chargeMoveNameEng}}| Monsters charge move (english)|
+|{{iv}}| Monsters Individual Value Precentage (2sp)|
+|{{ivColor}}| Color code that reflects this IV|
 |{{cp}}| Monsters CP|
+|{{genderData.name}}| Monsters gender |
 |{{genderData.emoji}}| Monsters gender emoji|
-|{{weight}}| Monsters weight|
+|{{weight}}| Monsters weight in kg|
+|{{height}}| Monster's height|
 |{{level}}| Monsters level|
 |{{atk}}| Monsters attack|
 |{{def}}| Monsters defense|
 |{{sta}}| Monsters stamina|
-|{{weight}}| Monsters weight in kilograms|
-|{{{staticmap}}}| Static link to map|
-|{{{mapurl}}}|Link to google maps search of the location|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUrl}}}|Link to google maps search of the location|
+|{{{appleMapUrl}}}||
+|{{{waveMapUrl}}}||
 |{{{imgUrl}}}| Link to monsters picture|
-|{{formName}}| Monsters form|
+|{{{stickerUrl}}| Link to monsters sticker|
 |{{color}}| Color to be used for embed (Color of monsters primary type)|
-|{{ivcolor}}| Color to be used for embed (Color of monsters perfection based on config.discord.iv_colors)|
-|{{boost}}| Monsters weather boost name|
-|{{boostemoji}}| Monsters weather boost emoji)|
-|{{gif}}| Gif image using pokemon-gif|
-|{{{pokemoji}}}| Custom Emoji of the pokemon if defined in config/emoji.json|
-|{{flagemoji}}|Country flag emoji for location|
+|{{ivColor}}| Color to be used for embed (Color of monsters perfection based on config.discord.iv_colors)|
+|{{flag}}|Country flag emoji for location|
 |{{areas}}| Matched geofence area names for alert|
+|matched| Matched areas (array)|
+|weatherCurrent||
+|alteringWeathers||
+|weatherChangeTime|Time weather will change|
+|boosted|Is Pokemon weather boosted?|
+|boostWeather||
+|boostWeatherName|Name of weather boost|
+|boostWeatherEmoji|Emoji of weather boost|
+|gameWeather||
+|gameWeatherName|Current game weather name|
+|gameWeatherEmoji|Current game weather emoji|
+|weatherChange|Weaher change text indicating possible weather change|
+|weatherCurrentName|Current weather name if there is a forecast change|
+|weatherCurrentEmoji||
+|weatherNextName|Name of next weather if there is a forecast change|
+|weatherNextEmoji|Emoji of next weather if there is a forecast change|
+|bestGreatLeagueRank||
+|bestGreatLeagueRankCP||
+|bestUltraLeagueRank||
+|bestUltraLeagueRankCP||
+|pvpDisplayMaxRank||
+|pvpDisplayGreatMinCP||
+|pvpDisplayUltraMinCP||
+|{{catchBase}}|Catch base %age|
+|{{catchGreat}}|Catch great ball %age|
+|{{catchUltra}}|Catch ultra ball %age|
+|{{rarityNameEng}|Rarity of pokemon (english)|
+|{{rarityName}}|Rarity of pokemon (localised)|
+|{{typeName}}|Type of pokemon (localised)|
+|{{emojiString}}|Emoji of pokemon type|
+{{name}}{{#if form}}{{#isnt formname 'Normal'}} {{formname}}{{/isnt}}{{/if}}
 
 
 ### Raid alarms
@@ -136,13 +251,18 @@ Any of the fields can be customized with the following:
 
 | Option        | Value         | 
 | --------------- |:-------------:|
-|{{id}}| Pokémon id|
+|{{pokemonId}}<br>{{id}}| Pokémon id|
 |{{name}}| Monsters name|
+|{{{gymName}}}|Name of gym|
+|{{level}}| Raid level|
 |{{time}}| Disappear time|
+|{{formId}} | Form Id |
+|{{formName}} | Form name |
 |{{tthh}}| Full hours until raid ends|
 |{{tthm}}| Full minutes until raid ends|
 |{{tths}}| Full seconds until raid ends|
 |{{now}}| Current Timestamp|
+|{{hatchTime}} | Hatch time of egg|
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|
 |{{addr}}| Address of the alerted location|
@@ -155,29 +275,27 @@ Any of the fields can be customized with the following:
 |{{state}}| State name of the alerted location|
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{neighbourhood}}| Neighbourhood of the alerted location|
-|{{quickMove}}| Monsters quick move|
-|{{chargeMove}}| Monsters charge move|
-|{{move1emoji}}| Monsters quick move type emoji|
-|{{move2emoji}}| Monsters charge move type emoji|
+|{{quickMoveName}}| Monsters quick move |
+|{{chargeMoveName}}| Monsters charge move|
+|{{quickMoveEmoji}}| Monsters quick move type emoji|
+|{{chargeMoveEmoji}}| Monsters charge move type emoji|
 |{{cp}}| Raid boss cp|
-|{{cp20}}| Monsters cp with 100% perfect IV and level 20|
-|{{cp25}}| Monsters cp with 100% perfect IV and level 25|
-|{{mincp20}}| Monsters cp with 0% perfect IV and level 20|
-|{{mincp20}}| Monsters cp with 0% perfect IV and level 25|
-|{{level}}| Raid level|
-|{{gymName}}| Name of the gym|
+|{{calculateCp baseStats 20 15 15 15}}| Monsters cp with 100% perfect IV and level 20|
+|{{calculateCp baseStats 25 15 15 15}}| Monsters cp with 100% perfect IV and level 25|
+|{{calculateCp baseStats 20 0 0 0}}| Monsters cp with 0% perfect IV and level 20|
+|{{calculateCp baseStats 25 0 0 0}}| Monsters cp with 0% perfect IV and level 25|
 |{{teamName}}| Team owner of the gym |
 |{{description}}| Description of the gym|
-|{{{detailsurl}}}| Descriptive picture url|
-|{{{staticmap}}}| Static link to map|
-|{{{mapurl}}}|Link to google maps search of the location|
+|{{{gymUrl}}}| Descriptive picture url|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUrl}}}|Link to google maps search of the location|
+|{{{appleMapUrl}}}|Link to apple maps search of the location|
+|{{{wazeMapUrl}}}|Link to waze maps search of the location|
 |{{{imgUrl}}}| Link to monsters picture|
-|{{color}}| Color to be used for embed (Color of monsters primary type)|
+|{{gymColor}}| Color to be used for embed (Color of monsters primary type)|
 |{{ex}}| If raid takes place in a potential EX gym (empty string if false)|
-|{{#ex}}True{{/ex}}{{^ex}}False{{/ex}}| Prints True if ex eligible, False if not|
-|{{gif}}| Gif image using pokemon-gif|
-|{{flagemoji}}|Country flag emoji for location|
-|{{{pokemoji}}}|Custom emoji for the award pokemon as set in config/emoji.json|
+|{{#if ex}}True{{else}}False{{#if}}| Prints True if ex eligible, False if not|
+|{{flag}}Country flag emoji for location|
 |{{areas}}| Matched geofence area names for alert|
 
 
@@ -210,6 +328,9 @@ Any of the fields can be customized with the following:
 
 | Option        | Value         | 
 | --------------- |:-------------:|
+|{{{gymName}}}| Name of the gym|
+|{{level}}| Raid level|
+|{{hatchTime}| Time of hatching|
 |{{time}}| Disappear time|
 |{{tthh}}| Full hours until raid ends|
 |{{tthm}}| Full minutes until raid ends|
@@ -227,10 +348,9 @@ Any of the fields can be customized with the following:
 |{{state}}| State name of the alerted location|
 |{{stateCode}}| 2 letter state code of the alerted location|
 |{{neighbourhood}}| Neighbourhood of the alerted location|
-|{{gymName}}| Name of the gym|
 |{{teamName}}| Team owner of the gym |
+|{{teamEmoji}}| Team emoji|
 |{{description}}| Description of the gym|
-|{{level}}| Raid level|
 |{{{detailsurl}}}| Descriptive picture url|
 |{{{staticmap}}}| Static link to map|
 |{{{mapurl}}}|Link to google maps search of the location|
@@ -238,8 +358,9 @@ Any of the fields can be customized with the following:
 |{{color}}| Color to be used for embed (Color of monsters primary type)|
 |{{ex}}| If raid takes place in a potential EX gym (empty string if false|
 |{{#ex}}True{{/ex}}{{^ex}}False{{/ex}}| Prints True if ex eligible, False if not|
-|{{flagemoji}}|Country flag emoji for location|
-
+|{{flag}}|Country flag emoji for location|
+|{{gameWeatherNameEng}}|
+|{{gameWeatherName}|
 
 ### Quest alarms
 
@@ -267,22 +388,23 @@ Any of the fields can be customized with the following:
 | Option        | Value         | 
 | --------------- |:-------------:|
 |{{now}}| Current Timestamp|
-|{{questType}}| The type of quest (for example: battle in 3 raids)|
-|{{quest_task}}| Exact text of the Quest (MAD only)|
-|{{conditionString}}| Extra conditions (for example: you must win these battles)|
+|{{questString}}| The type of quest (for example: battle in 3 raids)|
 |{{rewardString}}| Reward if you finish (Pokemon, item or stardust)|
 |{{monsterNames}}| Names of all reward monsters for this quest|
 |{{itemNames}}| Names of all reward Items for this quest|
-|{{stardust}}| The word "stardust" if it's that type of quest|
+|{{dustAmount}}| The word "stardust" if it's that type of quest|
+|{{isShiny}}| Pokemon reward is shiny|
+|{{itemAmount}}| |
+|{{energyAmount}} | |
+|{{energyMonstersNames}}| |
 |{{{imgUrl}}}| Image of the reward. Could be Pokemon or Item or stardust|
-|{{pokestop_name}}| Name of the Pokestop|
-|{{{rewardemoji}}}| emoji for the reward|
-|{{url}}| Link to the image of the Pokestop|
-|{{minCp}}| Minimum CP of the reward pokemon|
-|{{maxCp}}| Maximum CP of the reward pokemon|
-|{{{staticmap}}}| Static link to map|
-|{{{mapurl}}}| Link to google maps|
-|{{{applemap}}}| Link to apple maps|
+|{{{stickerUrl}}}| Image of the reward. Could be Pokemon or Item or stardust|
+|{{pokestopName}}| Name of the Pokestop|
+|{{pokestopUrl}}| Name of the Pokestop|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUrl}}}| Link to google maps|
+|{{{appleMapUrl}}}| Link to apple maps|
+|{{{wazeMapUrl}}}| Link to apple maps|
 |{{areas}}| Matched geofence area names for alert|
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|
@@ -295,7 +417,7 @@ Any of the fields can be customized with the following:
 |{{city}}| City name of the alerted location|
 |{{state}}| State name of the alerted location|
 |{{stateCode}}| 2 letter state code of the alerted location|
-|{{flagemoji}}|Country flag emoji for location|
+|{{flag}}|Country flag emoji for location|
 
 ### Invasion alarms
 
@@ -321,29 +443,32 @@ Any of the fields can be customized with the following:
 
 | Option        | Value         | 
 | --------------- |:-------------:|
-|{{time}}| Invasion end time|
+|{{{pokestopName}}}| Name of the Pokestop|
+|{{gruntName}}| The name of the grunt (grunt female or grunt male)|
+|{{disappearTime}}| Invasion end time|
 |{{tthh}}| Full hours until invasion ends|
 |{{tthm}}| Full minutes until invasion ends|
 |{{tths}}| Full seconds until invasion ends|
 |{{now}}| Current Timestamp|
-|{{gruntName}}| The name of the grunt (grunt female or grunt male)|
 |{{gruntType}}| The type of invasion (for example: Rock, Mixed|
+|{{gruntTypeColor}}| Color representing type of invasion|
 |{{gruntTypeEmoji}}| The emoji of type of invasion|
 |{{gruntRewards}}| If known, a list of possible rewards. Splits into 2 lines if there's a 85/15 split chance of reward.|
 |{{gruntRewardsList}}| A list of possible rewards containing chance, id and name|
-|{{gruntTypeColor}}| The color code matching the grunt invasion type|
-|{{genderName}}| The gender name or gender emoji of the grunt|
+|{{genderData.name}}|
+|{{genderData.emoji}}|
 |{{gruntTypeId}}| The id of the invasion type|
 |{{gender}}| The id of the grunt gender|
-|{{name}}| Name of the Pokestop|
 |{{{imgUrl}}}| alias for Link to the image of the Pokestop|
-|{{url}}| Link to the image of the Pokestop|
-|{{{staticmap}}}| Static link to map|
-|{{{mapurl}}}| Link to google maps|
-|{{{applemap}}}| Link to apple maps|
+|{{pokestopUrl}}| Link to the image of the Pokestop|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUurl}}}| Link to google maps|
+|{{{appleMapUrl}}}| Link to apple maps|
+|{{{wazeMapUrl}}| Link to waze|
 |{{areas}}| Matched geofence area names for alert|
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|
+|{{addr}}|Address|
 |{{streetNumber}}| Street number of the alerted location|
 |{{streetName}}| Street name of the alerted location|
 |{{zipcode}}| Zip code of the alerted location|
@@ -353,7 +478,11 @@ Any of the fields can be customized with the following:
 |{{city}}| City name of the alerted location|
 |{{state}}| State name of the alerted location|
 |{{stateCode}}| 2 letter state code of the alerted location|
-|{{flagemoji}}|Country flag emoji for location|
+|{{flag}}|Country flag emoji for location|
+
+```
+Possible rewards: {{#compare gruntRewardsList.first.chance '==' 100}}{{#forEach gruntRewardsList.first.monsters}}{{this.name}}{{#unless isLast}}, {{/unless}}{{/forEach}}{{/compare}}{{#compare gruntRewardsList.first.chance '<' 100}}\n ‣ {{gruntRewardsList.first.chance}}% : {{#forEach gruntRewardsList.first.monsters}}{{this.name}}{{#unless isLast}}, {{/unless}}{{/forEach}}\n ‣ {{gruntRewardsList.second.chance}}% : {{#forEach gruntRewardsList.second.monsters}}{{this.name}}{{#unless isLast}}, {{/unless}}{{/forEach}}{{/compare}}
+```
 
 
 ### Weather
@@ -390,6 +519,130 @@ Any of the fields can be customized with the following:
 |{{weatherNextName}}| weather name for next hour|
 |{{weatherNextEmoji}}| weather emoji for next hour|
 |{{weatherChangeTime}}| change time (format HH:00)|
+
+### Lures
+
+```json5
+  {
+      "id": 1,
+      "language": "en",
+      "type": "lure",
+      "default": true,
+      "platform": "discord",
+      "template": {
+        "username": "{{lureTypeName}}",
+        "avatar_url": "https://raw.githubusercontent.com/nileplumb/PkmnHomeIcons/master/RDM_OS_128/pokestop/{{minus lureTypeId 500}}.png",
+        "embed": {
+          "title": "Lure at {{{pokestopName}}}",
+          "url": "{{{googleMapUrl}}}",
+          "color": "{{lureTypeColor}}",
+          "description": "**Type:** {{lureTypeName}}\n **Ends at:** {{time}} \n(**Time left:** {{#if tthh}}{{tthh}}h {{/if}}{{tthm}}m {{tths}}s)\n**Address:** {{{addr}}}\n[Google]({{{googleMapUrl}}}) | [Apple]({{{appleMapUrl}}}) | [Waze]({{{wazeMapUrl}}})",
+          "thumbnail": {
+            "url": "{{{imgUrl}}}"
+          },
+          "image": {
+            "url": "{{{staticMap}}}"
+          }
+        }
+      }
+  },
+```
+
+
+| Option        | Value         | 
+| --------------- |:-------------:|
+|{{{pokestopName}}}| Name of the Pokestop|
+|{{lureTypeName}}| The type of lure (localised)|
+|{{lureTypeNameEng}}| The type of lure (english)|
+|{{lureTypeEmoji}}|Lure type emoji|
+|{{lureColor}}|Color of lure|
+|{{lureTypeId}}|Lure type id|
+|{{disappearTime}}| Invasion end time|
+|{{tthh}}| Full hours until invasion ends|
+|{{tthm}}| Full minutes until invasion ends|
+|{{tths}}| Full seconds until invasion ends|
+|{{now}}| Current Timestamp|
+|{{{imgUrl}}}| alias for Link to the image of the Pokestop|
+|{{pokestopUrl}}| Link to the image of the Pokestop|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUurl}}}| Link to google maps|
+|{{{appleMapUrl}}}| Link to apple maps|
+|{{{wazeMapUrl}}| Link to waze|
+|{{areas}}| Matched geofence area names for alert|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
+|{{addr}}|Address|
+|{{streetNumber}}| Street number of the alerted location|
+|{{streetName}}| Street name of the alerted location|
+|{{zipcode}}| Zip code of the alerted location|
+|{{country}}| Country of the alerted location|
+|{{countryCode}}| 2 letter country code of the alerted location|
+|{{neighbourhood}}| Neighbourhood of the alerted location|
+|{{city}}| City name of the alerted location|
+|{{state}}| State name of the alerted location|
+|{{stateCode}}| 2 letter state code of the alerted location|
+|{{flag}}|Country flag emoji for location|
+
+
+### Nests
+
+```json
+ {
+    "id": 1,
+    "type": "nest",
+    "language": "en",
+    "default": true,
+    "platform": "discord",
+    "template": {
+      "embed": {
+        "title": "{{name}} nest at {{nestName}}",
+        "description": "Nest first found on {{resetDate}}\nAverage spawn: {{pokemonSpawnAvg}}/hour",
+        "color": "{{color}}",
+        "thumbnail": {
+          "url": "{{{imgUrl}}}"
+        },
+        "image": {
+          "url": "{{{staticMap}}}"
+        }
+      }
+    }
+  },
+```
+
+| Option        | Value         | 
+| --------------- |:-------------:|
+|{{{nestName}}}| Name of the Nest|
+|{{pokemonId}}| Pokemon Id|
+|{{nameEng}}|Name of pokemon (english)|
+|{{name}|Name of Pokemon (localised)
+|{{pokemonCount}||
+|{{pokemonSpawnAvg}|Pokemon spawns per hour|
+|{{disappearDate}}| Predicted nest end date|
+|{{resetDate}}| Date when nest last reset|
+|{{now}}| Current Timestamp|
+|{{{imgUrl}}}| Link to pokemon image|
+|{{{staticMap}}}| Static link to map|
+|{{{googleMapUurl}}}| Link to google maps|
+|{{{appleMapUrl}}}| Link to apple maps|
+|{{{wazeMapUrl}}| Link to waze|
+|{{areas}}| Matched geofence area names for alert|
+|{{latitude}}| Latitude of the alerted location|
+|{{longitude}}| Longitude of the alerted location|
+|{{addr}}|Address|
+|{{streetNumber}}| Street number of the alerted location|
+|{{streetName}}| Street name of the alerted location|
+|{{zipcode}}| Zip code of the alerted location|
+|{{country}}| Country of the alerted location|
+|{{countryCode}}| 2 letter country code of the alerted location|
+|{{neighbourhood}}| Neighbourhood of the alerted location|
+|{{city}}| City name of the alerted location|
+|{{state}}| State name of the alerted location|
+|{{stateCode}}| 2 letter state code of the alerted location|
+|{{flag}}|Country flag emoji for location|
+
+
+### Help messages
+
 
 ### Greeting Message
 
@@ -437,3 +690,6 @@ Any of the fields can be customized with the following:
 This is the message that is sent to newly added users via DM. There are no dynamic variables in this message.  
 
 The "fields" without title and description are sent to users upon `!help` command
+
+###Maps
+

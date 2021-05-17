@@ -25,6 +25,9 @@ PoracleJS will react or reply to valid commands with either:
 ### !help
 
 `!help` sends instructions on some basic commands (from config/dts.json greeting template)
+Can take a parameter for a command - eg `!help track` - this returns text present in
+dts help template with an id of the command.  See the example for english
+in configs/default/dts
 
 ### !poracle
 
@@ -47,7 +50,8 @@ Once you successfully register, the bot will send you a DM with a greeting messa
 ### !location 
 
 `!location Tallinn kesklinn` for example, would register a users's location to `59.42685179999999,24.7595564`  
-Instead of "Tallinn kesklinn" you can search for any address, city, country or known area available in google.
+Instead of "Tallinn kesklinn" you can search for any address, city, country or known area available in google - or
+use longitude, latitude
 
 ### !area add
 
@@ -63,6 +67,14 @@ You can also use multiple areas in the same command (separated by spaces) and on
 ### !area list
 
 `!area list` lists the possible areas you can add.  
+
+### !area show
+
+`!area show Tallinn` - if geofence Tallinn is in the list of areas, show a staticmap with
+details of it; 
+`!area show d1000` - show a distance circle around current !location
+
+## !area overview
 
 ### !restore list
 

@@ -9,80 +9,111 @@ grand_parent: v3 Userguide
 # Filtering Options
 
 ## Basics
-**`/stop` & `/start`**  
-When you use the bot for the first time, you have to start it. If you stop the bot at some point and want to restart, you can do so using "/stop" and "/start".
 
-**`/location`**  
-You can choose your personal location using the location command. The command can be specified by coordinates or a postal address. You can check if the location has been applied correctly using the */tracked*-command. Afterwards, the location will be used for the filtering option 'distance'.
+### Simple commands
 
-**`/area add` & `/area remove` & `/area list`**  
-As an alternative to your personal location, you can also select preset areas. You can see which areas are available for your bot using the command `/area list`. The areas listed there can be added using `/area add *name*` and removed using `/area remove *name*`.
+When you are talking to Poracle there are a few basic commands you should remember
+
+Command | Description
+--- | ---
+**!help** | Replies with some help text
+**!tracked** | Display a summary of everything you are currently tracking
+**!stop** | Stop sending me messages - if you have tracked too much this can be a good way to stop Poracle spamming you!
+**!start** | Start sending messages again
+
+Poracle will temporarily stop sending you notifications if you receive too many over a short period of time.  If you
+do this repeatedly then it will stop sending you any notifications at all. Usually you can fix your tracking and
+issue a *!start* command to resume, but you may be asked to contact your site administrator.
+
+### Notification area
+
+You will only receive notifications for things that happen within the areas you have opted in, _or_ within a certain 
+distance from a specific location you set.
+
+When you first start to use poracle, it is sensible to use the pre-defined areas
+
+### Tracking by areas
+
+**`!area list`** will show you a list of all the areas that are available to you.  You can add tracking in these
+areas using **`!area add`** and remove them with **`area remove`**.  You can see the areas, and every other detail
+about your tracking using `!tracked`
+
+The area command helpfully can show you the extent of an area using the `!area show` command.
+
+### Setting your location
+
+You can set your home location and ask for notifications only within a certain distance of that. You do this by specifying !location -
+
+eg `!location 10 New Dover Road, London SW3 4SX`
+
+or find the latitude and longitude of your address in google maps and set it directly
+
+eg `!location 51.279,1.080`
+
+Once you have specified your location you will then be able to a distance marker to any notifications by using the `d` flag - for example `!egg level5 d500` - to see things within 500m of your house
+
+### Distance guide
+
+How far/fast can you walk? Here is a guide from the internet (so it must be true!)
+
+Metres | Fast | Moderate | Easy Walk
+---|---|---|---
+1000   |   7   |    10    |     13
+2000   |   14  |    20    |     25
+3000   |   21  |    30    |     38
+4000   |   28  |    40    |     50
+5000   |   35  |    50    |     63
 
 **`/tracked`**  
 shows the current filtering settings, followed by specifications on the location, the selected areas and all filters referring to anything from [Pokémon](#pokémon) to [Rocket/Invasion](#rocketinvasion).
 
+## Things you can be notified about!
 
 ## Pokémon
-This section lists all filtering options for tracking Pokémon. Every command must refer to at least one Pokémon, but all other components can be chosen or left out as desired.
 
-**`/track pikachu d1000 iv20 maxiv30 wp400 maxwp500 level6 maxlevel7 atk8 maxatk9 def8 maxdef9 sta8 maxsta9 t10 male/female/genderless`**
+There are a lot of options for filtering your alerts to get the pokemon you want.  The [Track](track.md) page contains all the detail, this just describes the
+basics.
+
+**`/track pikachu d1000 iv20`**
 
 **`/track`**  
-All commands to receive Pokémon notifications start with "/track". Using "/untrack [...]", you can remove the respective commands again. Note that you can only remove all tracking commands for a single Pokémon or a command for all Pokémon at the same time.
+All commands to receive Pokémon notifications start with "!track". Using "!untrack [...]", you can remove the respective commands again. 
 
 **`pikachu`**  
-This part of the command indicates which Pokémon the command refers to. It is possible to name one or more Pokémon using their Pokédex numbers or name (English or German), separated by space. You can track all Pokémon using "everything", or one whole generation of Pokémon using "genX".
+This part of the command indicates which Pokémon the command refers to. It is possible to name one or more Pokémon using their Pokédex numbers or name (multiple languages are supported if your
+Poracle is configured for this), separated by space. You can track all Pokémon using "everything".
+You can track all Pokemon of a particular type - eg `!track dark` and filter pokemon using a generation - eg `!track everything gen1` or `!track dragon gen3`
 
 **`d1000`**  
-You can use the geo location to filter if a Pokémon notification will be of interest for you. If one or more areas have been selected, as described in the [Basics](#basics), you will be notified about all Pokémon within those areas with the selected stats. Alternatively, you can select a personal location. The filtering option "dXXXX" refers to that location and sets the maximum distance from this location in meters. You can use area and location at the same time. Notifications will refer to both, the whole area and the whole radius of the location.
+If you do not specify a *'d' (distance) filter, then the areas you have selected using the !area command will be used to filter these alerts.
+If you do specify a distance, then you will be notified if a pokemon falls within the area around your location.
 
-![](../../assets/Location.png)
-If a user has chosen the location S, uses the distance D and has added area A, they receive notifications for X1 as a part of area A, notifications of X3 as it is included in the distance radius around S, and notifications for X2 for both reasons. They will not, however, receive notifications for X4, as that point lies outside both, the area and the distance radius. 
+You can see what a particular distance radius looks like for you by doing eg `!area show d1000`
 
-**`iv20 maxiv30`**  
-"ivX" indicates the minimum IVs the Pokémon must have to warrant a notification. If you do not set an "ivX", the minimum is set to iv0 automatically.
-"maxivX" indicates the maximum IVs a Pokémon may have to warrant a notification. If you do not set a "maxivX", the maximum is set to iv100 automatically. 
+**`iv20`**  
+"ivX" indicates the minimum IVs the Pokémon must have to warrant a notification. If you do not set an "ivX", then no minimum will be used.  
+There are other options including "maxivX" indicates the maximum IVs a Pokémon may have to warrant a notification. An iv of -1 is used
+when the IV is not known, so in this case specifying a minimum iv of 0 may be advisable too.
 
 Examples:  
-**`/track pikachu iv100`** - sends notifications for all Pikachu with 100 IV. 
-**`/track pikachu maxiv0`** - sends notifications for all Pikachu with 0 IV.  
-**`/track pikachu miniv50 maxiv60`** - sends notifications for all Pikachu with IVs between 50% and 60%.
+**`!track pikachu iv100`** - sends notifications for all Pikachu with 100 IV. 
+**`!track pikachu iv0 maxiv0`** - sends notifications for all Pikachu with 0 IV.  
+**`!track pikachu miniv50 maxiv60`** - sends notifications for all Pikachu with IVs between 50% and 60%.
 
-**Note:** IV specifications will be rounded to whole numbers. A Pokémon classified as IV98 actually has 44 of 45 possible IV points (15atk,15def,15sta), which are 97,77% mathematically.  Technically, IV97,77 should not be included in the IV range 98 and up. But since Poracle rounds the values, 97,77% falls into the IV98+ range, while 93,33% would not fall into the IV94+ range. 
+**Note:** IV specifications will be rounded to whole numbers. A Pokémon classified as IV98 actually has 44 of 45 possible IV points (15atk,15def,15sta), which are 97.77% mathematically.  
+Since, IV97.77 should not be included in the IV range 98 you would be best filtering for IV97 to capture all IV98 Pokemon.
 
-**`wp400 maxwp500`**  
-"wpX" indicates the minimum CP a Pokémon must have to warrant a notification. If you do not set a "wpX", the minimum is set to wp0 automatically.
-"maxwpX" indicates the maximum CP a Pokémon may have to warrant a notification. If you do not set a "maxwpX", there is no upper limit.
-
-**`level6 maxlevel7`**  
-"levelX" indicates the minimum level a Pokémon must have to warrant a notification. If you do not set a "levelX", the minimum is set to level 0 automatically. 
-"maxlevelX" indicates the maximum level a Pokémon may have to warrant a notification. If you do not set a "maxlevelX", there is no upper limit.
-
-**`atk8 maxatk9`**  
-"atkX" indicates the minimum attack value a Pokémon must have to warrant a notification. If you do not set a "atkX", the minimum is set to atk0 automatically. 
-"maxatkX" indicates the maximum attack value a Pokémon may have to warrant a notification. If you do not set a "maxatkX", the maximum is set to atk15 automatically.
-
-**`def8 maxdef9`**  
-See section on atk. Replace atk with def.
-
-**`sta8 maxsta9`**  
-See section on atk. Replace atk with sta.
-
-**`t10`**  
-Indicates the minimum time left for a notification until the Pokémon despawns. Some notifications come in rather late, with 2 minutes time left, for example. Since these Pokémon can likely not be reached in time, you can deactivate notifications for them.
-
-**`male/female/genderless`**  
-This way, you can filter by gender classification. This is especially useful if you are looking for a Combee that can evolve, for example. You would only have to look for the female form.
+You can specify more filters (eg levels, atk, def, sta) - see [Track](track.md) for more details.
 
 Additionally to the Pokémon names, Poracle also knows various names for specific forms, e.g. to look only for Alola-Pokémon. You can find an explicit list in the section [Pokémon Forms](#special-form_names).
 
 You can create several entries for a single Pokémon. 
-For example, you could use two commands to receive notifications for Pokémon with maximum IV0 and Pokémon with minimum IV100, both. 
+For example, you could use two commands to receive notifications for Pokémon with maximum IV0 and Pokémon with minimum IV100. 
 
-Important: to check if a /track command works as intended, use the command **`/tracked`** whenever you need to. This way, the bot will show you all filter settings it is currently using. 
+Important: to check if a !track command works as intended, use the command **`!tracked`** whenever you need to. This way, the bot will show you all filter settings it is currently using. 
 
 ## Quests
-All quest commands start with **`/quest`** and can be removed again using **`/quest remove`**. Quest commands can include the component for distance described in [Pokémon](#pokémon).
+All quest commands start with **`/!uest`** and can be removed again using **`!quest remove`**. Quest commands work within areas or distances as described above.
 
 ### Pokémon
 **`/quest Pikachu`** - sends notifications for all quests with Pikachu as a reward. 
@@ -90,48 +121,36 @@ All quest commands start with **`/quest`** and can be removed again using **`/qu
 **`/quest gen1`** - sends notifications for all quests with a first-generation Pokémon as a reward.
 
 ### Items  
-**`/quest all items`** - sends notifications for all quests with items as a reward. 
-**`/quest item rare candy`** - sends notifications for all quests with rare candy as a reward.  
+**`/quest everything`** - sends notifications for all quests. 
+**`/quest rare_candy`** - sends notifications for all quests with rare candy as a reward.  
 
 | Written Command | Item Name |   
 |:-----------|:-------------|  
-|"Poke Ball",|  Poké Ball |  
-|"Great Ball",  | Great Ball |  
-|"Ultra Ball",  | Ultra Ball |  
-|"Master Ball",  | Master Ball |  
-|"Premier Ball",  | Premier Ball |  
-|"Potion",  | Potion |  
-|"Super Potion",  | Super Potion |  
-|"Hyper Potion",  | Hyper Potion |  
-|"Max Potion",  | Max Potion |  
+|Poke_Ball",|  Poké Ball |  
+|Great_Ball",  | Great Ball |  
+|Ultra_Ball",  | Ultra Ball |  
+|Master_Ball",  | Master Ball |  
+|Premier_Ball",  | Premier Ball |  
+|Potion",  | Potion |  
+|Super_Potion",  | Super Potion |  
+|Hyper_Potion",  | Hyper Potion |  
+|Max_Potion",  | Max Potion |  
 |"Revive",  | Revive |  
-|"Max Revive",  | Max Revive |  
-|"Lucky Egg",  | Lucky Egg |  
-|"Incense Ordinary",  | Incense |  
-|"Incense Spicy",  | n/a |  
-|"Incense Cool",  | n/a |  
-|"Incense Floral",  | n/a |  
+|"Max_Revive",  | Max Revive |  
+|"Lucky_Egg",  | Lucky Egg |  
+|"Incense_Ordinary",  | Incense |  
 |"Troy Disk",  | Lure Module |  
 |"Troy Glacial Disk",  | Glacial Lure Module |  
 |"Troy Mossy Disk",  | Mossy Lure Module |  
 |"Troy Magnetic Disk",  | Magnetic Lure Module |  
-|"X Attack",  | X Attack |  
-|"X Defense",  | X Defense |  
-|"X Miracle",  | X Miracle |  
 |"Razz Berry",  | Razz Berry |  
-|"Bluk Berry",  | n/a |  
 |"Nanab Berry",  | Nanab Berry |  
-|"Wepar Berry",  | n/a |  
 |"Pinap Berry",  | Pinap Berry |  
 |"Golden Razz Berry",  | Golden Razz Berry |  
-|"Golden Nanab Berry",  | Golden Nanab Berry |  
 |"Silver Pinap Berry",  | Silver Pinap Berry |  
-|"Special Camera",  | Special Camera |  
 |"Incubator Basic Unlimited",  | Egg Incubator Unlimited |  
 |"Incubator Basic",  | Egg Incubator |  
 |"Incubator Super",  | Super Incubator |  
-|"Pokemon Storage Upgrade",  | Pokémon Storage Upgrade |  
-|"Item Storage Upgrade",  | Bag Upgrade |  
 |"Sun Stone",  | Sun Stone |  
 |"Kings Rock",  | King's Rock |  
 |"Metal Coat",  | Metal Coat |  
@@ -141,35 +160,34 @@ All quest commands start with **`/quest`** and can be removed again using **`/qu
 |"Unova Stone",  | Unova Stone |  
 |"Fast TM",  | Fast TM |  
 |"Charged TM",  | Charged TM |  
-|"Rare Candy",  | Rare Candy |  
-|"Free Raid Ticket",  | Battle Pass |  
-|"Paid Raid Ticket",  | Premium Battle Pass |  
-|"Legendary Raid Ticket",  | EX Raid Pass |  
-|"Star Piece",  | Star Piece |  
-|"Friend Gift Box"  | Gift |  
+|"Rare_Candy",  | Rare Candy |  
 
 **Note:** The system only supports English names for quest items. You can select all items available in the game data. This does not mean, however, that all those items are actually available in quests or at all in the game.
 
 ### Stardust
-**`/quest stardust`** - all quests with stardust as a reward.
-**`/quest stardust500`** - all quests with at least 500 stardust as a reward. 
+**`!quest stardust`** - all quests with stardust as a reward.
+**`!quest stardust500`** - all quests with at least 500 stardust as a reward. 
 
+### Mega Candy
+** `!quest energy`** - all quests with mega energy as a reward
+** `!quest energybulbasaur` ** - all quests with bulbasaur mega energy
 
 ## Raids
-There are two different kinds of Raid notifications. You can receive notifications when Raid Eggs appear or when a certain Raid Boss hatches. 
-For Eggs, your command starts with */egg*, while the command for the Raid Boss starts with */raid*.
-Consequently, you have to use */raid*-commands to receive notifications for specific Pokémon. 
-**`/raid Snorlax`** - sends notifications for all Snorlax Raids. 
-**`/raid gen1`** - sends notifications for all raids with a first-generation Pokémon (Kanto).
+There are two different kinds of Raid notifications. You can receive notifications when Raid Eggs first appear or when a certain Raid Boss hatches. 
+For Eggs, your command starts with *!egg*, while the command for the Raid Boss starts with *!raid*.
+Consequently, you have to use *!raid*-commands to receive notifications for specific Pokémon.
 
-Additionally, you can set the following filters for */raid*-commands and */egg*-commands (most of the filters can be combined freely):
-**`/raid(/egg) level2`** - sends notifications for all Tier 2 Raids or Eggs (cannot be combined with a filter for specific Pokémon!)
-**`/raid(/egg) d1000`** - Raids can be filtered by location.
-**`/raid(/egg) ex`** - sends notifications only for Raids at Gyms that are currently labeled as EX Raid Gyms.
-**`/raid(/egg) instinct/valor/mystic/harmony`** - sends notifications only for Raids at Gyms currently controlled by the selected team.
-**`/raid(/egg) everything`** - sends notifications for all Raids/Eggs.
+**`!raid Snorlax`** - sends notifications for all Snorlax Raids. 
+**`/raid gen1`** - sends notifications for all raids with a first-generation Pokémon (Kanto). [Not sure this works?]
 
-**`/egg remove`** or **`/raid remove`** removes all filters for Raids and Eggs. It can also refer to single Raid Tiers and Pokémon, e.g **`/raid remove Snorlax`**.
+Additionally, you can set the following filters for *!raid*-commands and *!egg*-commands (most of the filters can be combined freely):
+**`!raid(!egg) level2`** - sends notifications for all Tier 2 Raids or Eggs (cannot be combined with a filter for specific Pokémon!)
+**`!raid(!egg) d1000`** - Raids can be filtered by location.
+**`!raid(!egg) ex`** - sends notifications only for Raids at Gyms that are currently labeled as EX Raid Gyms.
+**`!raid(!egg) instinct/valor/mystic/harmony`** - sends notifications only for Raids at Gyms currently controlled by the selected team.
+**`!raid(!egg) everything`** - sends notifications for all Raids/Eggs.
+
+**`!egg remove`** or **`!raid remove`** removes all filters for Raids and Eggs. It can also refer to single Raid Tiers and Pokémon, e.g **`!raid remove Snorlax`**.
 
 ## Rocket/Invasion
 Currently, scanning Rocket-invaded PokéStops only happens passively. This means that the PokéStops are not actively approached, just detected by the radar. At any point where a scanner is doing a job of any kind, e.g. scanning a Pokémon, it collects information about invaded Stops in the surrounding area.
@@ -178,9 +196,9 @@ Since the workers never actively engage in a Rocket battle, they do not know exa
 
 All invasion-commands start with */invasion*. 
 You can remove all filtering settings for invasions using **`/invasion remove`**. 
-**`/invasion`** - sends notifications for all invaded Stops. 
-*/invasion*-commands can be specified by both areas and distances (d). 
-Additionally, you can filter by all 16 available Pokémon types (English names) and gender.
+**`!invasion`** - sends notifications for all invaded Stops. 
+*!invasion*-commands can be specified by both areas and distances (d). 
+Additionally, you can filter by all 16 available Pokémon types and gender.
 
 | Written Command | Meaning/Result |   
 | :-----------|:-------------|  
@@ -205,5 +223,17 @@ Additionally, you can filter by all 16 available Pokémon types (English names) 
 |"mixed"| Tracks invasions with an undetermined type | 
 |"male"| Tracks male invasions  | 
 |"female"| Tracks female invasions  | 
+|giovanni|Tracks for giovanni|
+|arlo|
+|cliff|
+|sierra|
 
 *Note:* You can combine several filters/types. E.g.: **`/invasion fire water ice male`** - tracks all male invasions with either a fire type, water type, or ice type Pokémon as a reward.
+
+### Lures
+
+Track when lures have been
+
+### Nests
+
+If your administrator has configured it, ...

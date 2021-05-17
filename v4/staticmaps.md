@@ -5,20 +5,35 @@ layout: default
 parent: v4
 ---
 
-# Staticmaps
-{% raw %}
-Poracle supports five different staticmaps services for displaying little maps below your alarms by using `{{{staticmap}}}`. If you are using Telegram, you can set `webpage_preview` to True and put `[\u200A]({{{staticmap}}})` infront of your text to have an embedded staticmap.
-{% endraw %}
+Poracle can be configured in a variety of different ways to support
+tiles in output.  Whilst most commonly in use for discord notifications,
+they are more commonly being used in some telegram contexts
+(for example weather changes)
 
-## Poracle
+Because of the flexible dts, you can build a direct link to a tileserver
+if you want, or you can use the ``{{staticMap}}`` calculated URL
+which Poracle will do the heavy lifting for you.
 
-That's the public hosted tileservercache server. Completely free and without ratelimits. **Currently not available**
+For best results, the recommendation is to use a SwiftTileServer and
+set Poracle to use the `tileservercache` option (see below) - as this
+causes the tile to be pregenerated and therefore instantly available
+to users.  
+
+For telegram, the trick is to include the map as a URL link with a blank
+link title - ie put ``[\u200A]({{{staticMap}}})`` in your template and
+set `webpage_preview` to True. You can see this in the example DTS for
+weatherchange.
+
+# Static Maps
+
+Poracle supports five different staticmaps services for displaying little maps below your alarms by using `{{{staticMap}}}`
 
 ## TileServerCache
 
 That's the option for a self hosted TileServerCache server. Read more about it [here](https://github.com/123FLO321/SwiftTileserverCache). 
 
-You need to copy the four templates located in `tileservercache_templates/` into the `Templates/` directory of your Tileserver.
+You need to copy the templates located in `tileservercache_templates/` into the `Templates/` directory of your Tileserver so
+that Poracle has access to the templates it needs to generate the tiles.
 
 
 ## Google Maps

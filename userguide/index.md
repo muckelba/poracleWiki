@@ -1,11 +1,14 @@
 ---
-title: v3 Userguide
+title: Userguide
 nav_order: 4
 layout: default
 has_children: true
 has_toc: true
 ---
 
-# v3 Userguide
+# User Guide
 
-This is a guide for all users, weather you are a scanner admin, discord mod or a simple user. It's written in [English](en) and [German](de) and is based on Poracle v3. This is an old version of Poracle, but most of it should still be right. Feel free to [improve](../contributing.md) this guide!
+This is a general guide for end-users of Poracle. Not all systems running Poracle will offer all the facilities listed 
+in this guide but it acts as an excellent starting point.
+
+Feel free to [improve](../contributing.md) this guide!
