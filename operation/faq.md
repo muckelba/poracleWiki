@@ -4,6 +4,9 @@ nav_order: 5
 layout: default
 parent: Operation
 ---
+
+Some frequently, and some not so frequently asked questions
+
 ### How do you upgrade your node?
 
 ### How do you switch to a Pull Request for testing
@@ -24,3 +27,38 @@ git checkout develop
 git fetch origin pull/246/head:telegram
 git checkout telegram
 ```
+
+### Testing geocoding
+
+```js
+node
+(new require('node-geocoder')({provider: 'openstreetmap',osmServer:'http://10.4.2.41:7070'}).reverse({lat:52,lon:1})).then(console.log)
+```
+
+### Increase heap size
+
+Very rarely in very big systems, Poracle may require more than 2gb of 
+memory
+
+```sh
+node --max-old-space-size=8192 src/app.js
+```
+
+or under PM2:
+```sh
+pm2 start src/app.js --node-args="--max-old-space-size=8192" --name poracle
+```
+
+# Testing that poracle is listening
+
+```sh
+curl http://127.0.0.1:3030/health
+```
+
+
+# How does Poracle eliminate duplicates?
+
+* Pokemon: Encounter ID, Disappear Time, CP
+* Raid/Egg: Gym, Message End, Pokemon ID
+* Incident: Pokestop ID, IncidentExpiration
+* Quest: Pokestop ID, Rewards

@@ -76,6 +76,26 @@ discord webhook queue (2 above) or the telegram queue (1).  Build ups in these
 outbound queues indicate a delivery problem - it's possible that a bot is overwhelmed
 or (more likely) you are being rate limited by discord or telegram.
 
+These more frequent queue entries at verbose level show what is happening per
+bot -- although guidance is now that you only need a single bot and should fine 
+tune the concurrent senders (ask for help if you see these queue entries growing!)
+
+```
+james@madmaster:~/PoracleJS/logs$ grep TelegramQueue general.log
+2021-05-18 00:44:23 $MAIN verbose: #1 TelegramQueue is currently 0
+2021-05-18 00:44:23 $MAIN verbose: #1 TelegramQueue is currently 0
+2021-05-18 07:37:19 $MAIN verbose: #1 TelegramQueue is currently 0
+```
+
+```
+james@madmaster:~/PoracleJS/logs$ grep DiscordQueue general.log
+2021-05-18 14:12:27 $MAIN verbose: #1 DiscordQueue is currently 2
+2021-05-18 14:13:26 $MAIN verbose: #1 DiscordQueue is currently 0
+2021-05-18 14:13:26 $MAIN verbose: DiscordQueue[Webhook] is currently 0
+2021-05-18 14:14:59 $MAIN verbose: #1 DiscordQueue is currently 1
+2021-05-18 14:37:21 $MAIN verbose: #1 DiscordQueue is currently 0
+2021-05-18 14:38:22 $MAIN verbose: #1 DiscordQueue is currently 0
+```
 ### Other interesting log entries
 
 ```

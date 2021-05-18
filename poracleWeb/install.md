@@ -1,5 +1,5 @@
 ---
-title: Commands
+title: Installation
 nav_order: 1
 layout: default
 parent: Poracle Web
@@ -31,6 +31,16 @@ For those parameters go to :
 
 ### Configurating API in Poracle
 
+```json
+  "server": {
+      "host": "127.0.0.1",        // host name to listen on 127.0.0.1 only localhost; 0.0.0.0 would be in all network interfaces
+      "port": "3030",             // port
+    // ipWhitelist, ipBlacklist - array of whitelisted or blacklisted addresses
+      "ipWhitelist": [],
+      "ipBlacklist": [],
+      "apiSecret": ""             // apiSecret to use for access to Poracle API -- blank API disabled
+  },
+```
 
 ### Testing the API
 
