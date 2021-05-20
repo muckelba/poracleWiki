@@ -1,6 +1,6 @@
 ---
 title: Third Party Apps
-nav_order: 9
+nav_order: 8
 layout: default
 ---
 
@@ -31,6 +31,10 @@ Third Party apps used to enhance the functionality of PorcaleJS
 
 * Scans MAD or RDM database for nests
 * Posts details to Poracle to allow nest alerts to work
+
+## [Poracle Stats](https://github.com/dkmur/poracleStats)
+
+* Detailed grafana stats for your poracle installation!
 
 ## Geofence designers
 
