@@ -90,7 +90,7 @@ Sometimes it's necessary to use three curly braces on each side. This avoids url
 
 
 ### Monster alarms
-{% raw %}
+
 ```json
 {
     "id": 1,
@@ -131,12 +131,11 @@ For monsters without IV information, you can specify a different message.
   },
 ```
 
-
 Any of the fields can be customized with the following:
 
 | Option        | Value         | 
-|---------------|:-------------:|
-|{{pokemonId}}<br>{{id}}| Pokemon Id|
+|---------------|:-------------|
+|{{pokemonId}} {{id}}| Pokemon Id |
 |{{name}}| Pokemon name (localised)|
 |{{nameEng}}| Name of pokemon (english)
 |{{encounterId}}| The encounter id from the scanner |
