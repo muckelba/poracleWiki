@@ -5,6 +5,8 @@ layout: default
 parent: Configuration
 ---
 
+{% raw %}
+
 # Geocoding
 
 Poracle supports two different geocoding services for displaying addresses in your DTS by using ```{{addr}}```, ```{{streetNumber}}```, ```{{streetName}}```, ```{{zipcode}}```, ```{{country}}```, ```{{countryCode}}```, ```{{city}}```, ```{{state}}```, ```{{stateCode}}``` and ```{{neighbourhood}}```. Setting it to `none` will set those fields to `unknown` but
@@ -67,3 +69,4 @@ https://maps.googleapis.com/maps/api/geocode/json?latlng=59.432982,24.7535747&ke
 ## OSM
 
 OpenStreetMap offers a public nominatim server as well, but ratelimits very hard which makes it almost unuseable with PoracleJS.
+{% endraw %}

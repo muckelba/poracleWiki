@@ -6,21 +6,21 @@ parent: Configuration
 ---
 
 {% raw %}
-##Handlebars functions
+## Handlebars functions
 
-###{{numberFormat xx 2}} or {{toFixed xx 2}}
+### {{numberFormat xx 2}} or {{toFixed xx 2}}
 
 Format a number to a given number of decimal places
 
-###{{calculateCp}}
+### {{calculateCp}}
 
 {{calculateCp baseStats 20 15 15 15}}
 
-###{{pokemonBaseStats}}
+### {{pokemonBaseStats}}
 
 {{calculateCp (pokemonBaseStats 2) 20 15 15 15}}
 
-###{{getPowerUpCost}}
+### {{getPowerUpCost}}
 
 `{{getPowerUpCost}}` will give a text string
 
@@ -29,15 +29,15 @@ or can be used in it's constituent parts eg:
 {{#getPowerUpCost 5 10}}Candy - {{candy}} Stardust - {{stardust}}{{/getPowerUpCost}}
 ```
 
-###{{concat}}
+###{ {concat}}
 
 `{{concat pokemonId '_' formId}}` would give 5_0
 
-###{{pad0}}
+### {{pad0}}
 
 `{{pad0 pokemonId}}` would pad to three digits eg 021
 
-###{{map}}
+### {{map}}
 
 Poracle contains a generalised mapping function.  Define a map in the customMaps folder like this --
 ```json5
@@ -63,22 +63,22 @@ And you can then use it in your DTS to map from anything to anything - eg in thi
 
 I hope people will come up with some imaginative mappings and share them (we have a defaults/customMaps folder so we can ship some cool ones!)
 
-##handlebars helpers
+## handlebars helpers
 
-###{{if}}
+### {{if}}
 
 `{{#if verified}}Verified{{else}}Not verified{{/if}}`
 
-###{{#each}}
+### {{#each}}
 
 eg `{{#each matched}}{{map 'arealist' this}}{{/each}}`
 to use a map for each area name to more descriptive text
 
-###{{compare}}
+### {{compare}}
 
 
-###{{join}}
+### {{join}}
 
-###{{eq}}
+### {{eq}}
 
 {% endraw %}
