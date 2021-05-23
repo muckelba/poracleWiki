@@ -5,6 +5,8 @@ layout: default
 parent: Configuration
 ---
 
+{% raw %}
+
 Poracle can be configured in a variety of different ways to support
 tiles in output.  Whilst most commonly in use for discord notifications,
 they are more commonly being used in some telegram contexts
@@ -76,3 +78,5 @@ Go to [the Mapbox website](https://www.mapbox.com/), click on `Start mapping for
 ```
 https://api.mapbox.com/styles/v1/mapbox/streets-v10/static/url-https%3A%2F%2Fi.imgur.com%2FMK4NUzI.png(59.432982,24.7535747)/59.432982,24.7535747,15,0,0/250x175?access_token=YOURKEYHERE
 ```
+
+{% endraw %}
