@@ -5,7 +5,7 @@ layout: default
 parent: Configuration
 ---
 
-
+{% raw %}
 ##Handlebars functions
 
 ###{{numberFormat xx 2}} or {{toFixed xx 2}}
@@ -81,3 +81,4 @@ to use a map for each area name to more descriptive text
 
 ###{{eq}}
 
+{% endraw %}

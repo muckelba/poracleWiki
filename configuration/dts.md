@@ -5,6 +5,7 @@ layout: default
 parent: Configuration
 ---
 
+{% raw %}
 # Custom Messages
 
 One of Poracle's greatest strengths is its ability to deliver a very configurable set of alarm
@@ -134,7 +135,7 @@ For monsters without IV information, you can specify a different message.
 Any of the fields can be customized with the following:
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{pokemonId}}<br>{{id}}| Pokemon Id|
 |{{name}}| Pokemon name (localised)|
 |{{nameEng}}| Name of pokemon (english)
@@ -249,7 +250,7 @@ Any of the fields can be customized with the following:
 ```
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{pokemonId}}<br>{{id}}| Pokémon id|
 |{{name}}| Monsters name|
 |{{{gymName}}}|Name of gym|
@@ -326,7 +327,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{{gymName}}}| Name of the gym|
 |{{level}}| Raid level|
 |{{hatchTime}| Time of hatching|
@@ -385,7 +386,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{now}}| Current Timestamp|
 |{{questString}}| The type of quest (for example: battle in 3 raids)|
 |{{rewardString}}| Reward if you finish (Pokemon, item or stardust)|
@@ -441,7 +442,7 @@ Any of the fields can be customized with the following:
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{{pokestopName}}}| Name of the Pokestop|
 |{{gruntName}}| The name of the grunt (grunt female or grunt male)|
 |{{disappearTime}}| Invasion end time|
@@ -549,7 +550,7 @@ Possible rewards: {{#compare gruntRewardsList.first.chance '==' 100}}{{#forEach 
 
 
 | Option        | Value         | 
-| --------------- |:-------------:|
+|---------------|:-------------:|
 |{{{pokestopName}}}| Name of the Pokestop|
 |{{lureTypeName}}| The type of lure (localised)|
 |{{lureTypeNameEng}}| The type of lure (english)|
