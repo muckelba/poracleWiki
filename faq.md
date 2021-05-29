@@ -11,6 +11,16 @@ Testing poracle listens
 git fetch origin pull/246/head:telegram
 git checkout telegram
 
+# PM2 warning on startup
+
+```2|poracle  | WARNING: NODE_APP_INSTANCE value of '0' did not match any instance config file names.
+2|poracle  | WARNING: See https://github.com/lorenwest/node-config/wiki/Strict-Mode
+```
+
+Create default-0.json in config folder containing
+
+```{}```
+
 # How does duplicate elimination work?
 
 Pokemon: Encounter ID, Disappear Time Present, CP

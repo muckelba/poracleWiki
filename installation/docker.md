@@ -35,7 +35,6 @@ This will:
 3. Create a directory `PoracleJS-docker/config`. (here we store the config files of PoracleJS)
 4. Create a file `local.json` in the config directory. (here we configure PoracleJS)
 
-
 Your directory should now look like this:
 
 ```bash

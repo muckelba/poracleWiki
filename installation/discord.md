@@ -28,7 +28,8 @@ Set your local.json with the following options:
 
 # Start Poracle
 
-Once you start poracle for this first time you should
+Once you start poracle for this first time you should see Poracle become active, and
+then you can test your registration:
 
 # Register with poracle
 
