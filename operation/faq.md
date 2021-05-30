@@ -28,6 +28,22 @@ git fetch origin pull/246/head:telegram
 git checkout telegram
 ```
 
+### Has my config been read correctly?
+
+This command will display the combined default.json / local.json
+
+```shell
+echo "console.log(require('config'))" | node
+```
+
+### Prettify local.json
+
+This command will prettify local.json
+
+```shell
+echo "console.log(JSON.stringify(JSON.parse(require('strip-json-comments')(require('fs').readFileSync('config/local.json','utf8'))),null,'\t'))" | node
+```
+
 ### Testing geocoding
 
 ```js
