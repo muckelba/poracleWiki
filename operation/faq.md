@@ -55,6 +55,8 @@ pm2 start src/app.js --node-args="--max-old-space-size=8192" --name poracle
 curl http://127.0.0.1:3030/health
 ```
 
+If everything is working poracle will respond:
+
 
 # How does Poracle eliminate duplicates?
 

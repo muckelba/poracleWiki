@@ -5,7 +5,6 @@ layout: default
 parent: Configuration
 ---
 
-
 # Role checking
 
 Poracle can check that users are still a member of a registration channel. If they
@@ -32,6 +31,10 @@ You then can add trackings by sending DM to Poracle and including the name desig
 
 # Stickers
 
-Telegram alerts can send a sticker. Telegram is a bit fussy about these; they have to be
-from a https source for example, and if they do not exist it will remember this and
-not display them for a while rather than checking on every messasge.
+Telegram alerts can send a sticker. Telegram is a bit fussy about these:
+
+* they have to be from a https source,
+* need to be in webp format
+* if they do not exist it will remember this and not display them for a while rather than checking on every messasge.
+
+# Web page preview

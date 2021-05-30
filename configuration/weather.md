@@ -11,11 +11,11 @@ Poracle supports advanced tracking of in-game weather including:
 * Weather change alerts from Weather Webhooks
 * Weather change alerts from boosted Pokémons in the s2cell
 
-<img src="../assets/weather-change-example.png" style="width: 250px">
+<img src="../assets/weather-change-example.png" style="width: 450px">
 
 * Weather Forecast based on AccuWeather data to show on Pokémon alerts if the weather changes are likely to change boost status and stats
 
-<img src="../assets/weather-forecast-example.png" style="width: 250px">
+<img src="../assets/weather-forecast-example.png" style="width: 450px">
 
 ## Configuration
 
