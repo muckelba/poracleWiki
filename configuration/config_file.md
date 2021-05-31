@@ -5,6 +5,7 @@ layout: default
 parent: Configuration
 ---
 
+{% raw %}
 # Config file
 
 Poracle's main configuration file is `local.json`. You will also notice a 
@@ -39,7 +40,7 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 | disabledCommands | Array of disabled commands|
 | disablePokemon | Set to true to disable processing of mons|
 | disableRaid | Set to true to disable processing of raids|
-| disableInvasion | (not used atm) Set to true to disable processing of invasions| 
+| disableInvasion | Set to true to disable processing of invasions| 
 | disablePokestop | Set to true to disable processing of invasions|
 | disableQuest | Set to true to disable processing of quests|
 | disablePokemon | Set to true to disable processing of weather|
@@ -60,14 +61,14 @@ Thats the section about the PoracleJS listener. It's the endpoint where you send
 | conn | Database credentials.
 
 ## Locale
-{% raw %}
+
 | Option        | Value         | 
 | ------------- |---------------|
 | timeformat | Locale of the displayed time. You can find a list of available locales with `ls -l node_modules/moment/locale/` |
 | time | Timeformat. Learn more about it in the "Locale aware formats" section [here](https://momentjs.com/docs/#/parsing/string-format/) |
 | addressFormat | Formatting of `{{addr}}` in DTS |
 | language | Language when using `{{translateAlt}}` in DTS |
-{% endraw %}
+
 
 ## Geofence
 
@@ -140,7 +141,7 @@ The tiers of IV colors are as follows:
 | Option        | Value         | 
 | ------------- |---------------|
 | enabled | Enables Telegram support |
-| channels | Array of chat IDs where where users can register in |
+| channels | Array of chat IDs (groups)where where users can register in |
 | checkRole | Enables a member check in the channels to automatically unregister left members |
 | checkRoleInterval | Interval in hours when to check users |
 | token | Bot-token from @Botfather. Only one Possible|
@@ -155,7 +156,7 @@ Read more about [Geocoding](geocoding.html) and [Staticmaps](staticmaps.html).
 | provider | Geocoding provider. Possible options are: `poracle` (not working at the moment), `nominatim` (for a selfhosted nominatim instances), `google` and `openstreetmap` (public nominatim instance, has a pretty low ratio limit) |
 | providerURL | URL pointing to a nominatim instance. Not needed when using `google` or `openstreetmap`. Set it to `none` to disable it |
 | geocodingKey | Google Geocoding Key if using `google` |
-| staticProvider | Staticmap provider. Possible options are: `poracle` (not working at the moment), `tileservercache` (for a selfhosted tileservercache instance), `google`, `osm` (using mapquest API), `mapbox` (using mapbox API). Set it to `none` to disable it|
+| staticProvider | Staticmap provider. Possible options are:  `tileservercache` (for a selfhosted tileservercache instance), `google`, `osm` (using mapquest API), `mapbox` (using mapbox API). Set it to `none` to disable it|
 | staticKey | API key for `google`, `osm` or `mapbox` |
 | width | Width of the staticmap |
 | height | Height of the staticmap |
@@ -164,3 +165,5 @@ Read more about [Geocoding](geocoding.html) and [Staticmaps](staticmaps.html).
 | spriteWidth | Icon width on the staticmap |
 | scale | Scaling of the staticmap |
 | type | Styletype of the staticmap |
+
+{% endraw %}
