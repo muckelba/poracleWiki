@@ -25,11 +25,18 @@ Format a number to a given number of decimal places
 `{{getPowerUpCost}}` will give a text string
 
 or can be used in it's constituent parts eg:
+
 ```
 {{#getPowerUpCost 5 10}}Candy - {{candy}} Stardust - {{stardust}}{{/getPowerUpCost}}
 ```
 
-###{ {concat}}
+```
+{{#getPowerUpCost ../level this.level}}:stardust:{{addCommas stardust}}:rarecandy:{{candy}}{{#compare xlCandy '>' 0}}:rarecandyxl:{{xlCandy}}{{/compare}}{{/getPowerUpCost}}
+```
+
+<img src="../assets/get-powerup-cost-example.png" style="width: 450px">
+
+### {{concat}}
 
 `{{concat pokemonId '_' formId}}` would give 5_0
 
