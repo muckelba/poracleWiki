@@ -1,10 +1,10 @@
 title: Poracle Documentation
 description: Documentation for Poracle
-url: "https://jfberry.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://muckleba.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/poracleWiki" # the subpath of your site, e.g. /blog
 show_downloads: false
 color_scheme: "poracle" # Use "dark" for darkmode
-footer_content: "Copyright &copy; 2020."
+footer_content: "Copyright &copy; 2021."
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub."
 gh_edit_repository: https://github.com/jfberry/poracleWiki
@@ -13,7 +13,7 @@ gh_edit_view_mode: "tree"
 
 aux_links:
   "PoracleWiki on GitHub":
-    - "https://jfberry.com/muckelba/poracleWiki"
+    - "https://github.com/muckelba/poracleWiki"
 aux_links_new_tab: true
 
 # Build settings
