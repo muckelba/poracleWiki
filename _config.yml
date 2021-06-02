@@ -1,6 +1,6 @@
 title: Poracle Documentation
 description: Documentation for Poracle
-url: "https://muckleba.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://muckelba.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 baseurl: "/poracleWiki" # the subpath of your site, e.g. /blog
 show_downloads: false
 color_scheme: "poracle" # Use "dark" for darkmode
