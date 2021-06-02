@@ -174,6 +174,7 @@ Any of the fields can be customized with the following:
 |{{cp}}| Monsters CP|
 |{{genderData.name}}| Monsters gender |
 |{{genderData.emoji}}| Monsters gender emoji|
+|{{gender}}|Gender id number; 0 = unset, 1 = male, 2 = female, 3 = genderless|
 |{{weight}}| Monsters weight in kg|
 |{{height}}| Monster's height|
 |{{level}}| Monsters level|

@@ -113,12 +113,10 @@ For example, you could use two commands to receive notifications for Pokémon wi
 Important: to check if a !track command works as intended, use the command **`!tracked`** whenever you need to. This way, the bot will show you all filter settings it is currently using. 
 
 ## Quests
-All quest commands start with **`/!uest`** and can be removed again using **`!quest remove`**. Quest commands work within areas or distances as described above.
+All quest commands start with **`/!quest`** and can be removed again using **`!quest remove`**. Quest commands work within areas or distances as described above.
 
 ### Pokémon
 **`/quest Pikachu`** - sends notifications for all quests with Pikachu as a reward. 
-**`/quest all pokemon`** - sends notifications for all quests with a Pokémon as a reward. 
-**`/quest gen1`** - sends notifications for all quests with a first-generation Pokémon as a reward.
 
 ### Items  
 **`/quest everything`** - sends notifications for all quests. 
@@ -126,41 +124,41 @@ All quest commands start with **`/!uest`** and can be removed again using **`!qu
 
 | Written Command | Item Name |   
 |:-----------|:-------------|  
-|Poke_Ball",|  Poké Ball |  
-|Great_Ball",  | Great Ball |  
-|Ultra_Ball",  | Ultra Ball |  
-|Master_Ball",  | Master Ball |  
-|Premier_Ball",  | Premier Ball |  
-|Potion",  | Potion |  
-|Super_Potion",  | Super Potion |  
-|Hyper_Potion",  | Hyper Potion |  
-|Max_Potion",  | Max Potion |  
-|"Revive",  | Revive |  
-|"Max_Revive",  | Max Revive |  
-|"Lucky_Egg",  | Lucky Egg |  
-|"Incense_Ordinary",  | Incense |  
-|"Troy Disk",  | Lure Module |  
-|"Troy Glacial Disk",  | Glacial Lure Module |  
-|"Troy Mossy Disk",  | Mossy Lure Module |  
-|"Troy Magnetic Disk",  | Magnetic Lure Module |  
-|"Razz Berry",  | Razz Berry |  
-|"Nanab Berry",  | Nanab Berry |  
-|"Pinap Berry",  | Pinap Berry |  
-|"Golden Razz Berry",  | Golden Razz Berry |  
-|"Silver Pinap Berry",  | Silver Pinap Berry |  
-|"Incubator Basic Unlimited",  | Egg Incubator Unlimited |  
-|"Incubator Basic",  | Egg Incubator |  
-|"Incubator Super",  | Super Incubator |  
-|"Sun Stone",  | Sun Stone |  
-|"Kings Rock",  | King's Rock |  
-|"Metal Coat",  | Metal Coat |  
-|"Dragon Scale",  | Dragon Scale |  
-|"Up Grade",  | Up-Grade |  
-|"Sinnoh Stone",  | Sinnoh Stone |  
-|"Unova Stone",  | Unova Stone |  
-|"Fast TM",  | Fast TM |  
-|"Charged TM",  | Charged TM |  
-|"Rare_Candy",  | Rare Candy |  
+|Poke_Ball|  Poké Ball |  
+|Great_Ball  | Great Ball |  
+|Ultra_Ball  | Ultra Ball |  
+|Master_Ball  | Master Ball |  
+|Premier_Ball  | Premier Ball |  
+|Potion  | Potion |  
+|Super_Potion  | Super Potion |  
+|Hyper_Potion  | Hyper Potion |  
+|Max_Potion  | Max Potion |  
+|Revive  | Revive |  
+|Max_Revive  | Max Revive |  
+|Lucky_Egg  | Lucky Egg |  
+|Incense_Ordinary  | Incense |  
+|Lure_module  | Lure Module |  
+|glacial_lure_module  | Glacial Lure Module |  
+|mossy_lure_module  | Mossy Lure Module |  
+|magnetic_lure_module| Magnetic Lure Module |  
+|Razz Berry  | Razz Berry |  
+|Nanab_Berry  | Nanab Berry |  
+|Pinap_Berry  | Pinap Berry |  
+|Golden_Razz_Berry  | Golden Razz Berry |  
+|Silver_Pinap_Berry  | Silver Pinap Berry |  
+|egg_incubator_∞ | Egg Incubator Unlimited |  
+|egg_incubator  | Egg Incubator |  
+|super_incubator  | Super Incubator |  
+|Sun_Stone  | Sun Stone |  
+|Kings_Rock  | King's Rock |  
+|Metal_Coat  | Metal Coat |  
+|Dragon_Scale  | Dragon Scale |  
+|Up_Grade  | Up-Grade |  
+|Sinnoh_Stone  | Sinnoh Stone |  
+|Unova_Stone  | Unova Stone |  
+|Fast_TM  | Fast TM |  
+|Charged_TM  | Charged TM |  
+|Rare_Candy  | Rare Candy |  
 
 **Note:** The system only supports English names for quest items. You can select all items available in the game data. This does not mean, however, that all those items are actually available in quests or at all in the game.
 
@@ -178,61 +176,79 @@ For Eggs, your command starts with *!egg*, while the command for the Raid Boss s
 Consequently, you have to use *!raid*-commands to receive notifications for specific Pokémon.
 
 **`!raid Snorlax`** - sends notifications for all Snorlax Raids. 
-**`/raid gen1`** - sends notifications for all raids with a first-generation Pokémon (Kanto). [Not sure this works?]
 
 Additionally, you can set the following filters for *!raid*-commands and *!egg*-commands (most of the filters can be combined freely):
-**`!raid(!egg) level2`** - sends notifications for all Tier 2 Raids or Eggs (cannot be combined with a filter for specific Pokémon!)
+
+**`!raid(!egg) level5`** - sends notifications for all Tier 5 Raids or Eggs (cannot be combined with a filter for specific Pokémon!) Note level 6 is for mega raids!
+
 **`!raid(!egg) d1000`** - Raids can be filtered by location.
+
 **`!raid(!egg) ex`** - sends notifications only for Raids at Gyms that are currently labeled as EX Raid Gyms.
+
 **`!raid(!egg) instinct/valor/mystic/harmony`** - sends notifications only for Raids at Gyms currently controlled by the selected team.
+
 **`!raid(!egg) everything`** - sends notifications for all Raids/Eggs.
 
 **`!egg remove`** or **`!raid remove`** removes all filters for Raids and Eggs. It can also refer to single Raid Tiers and Pokémon, e.g **`!raid remove Snorlax`**.
 
 ## Rocket/Invasion
 Currently, scanning Rocket-invaded PokéStops only happens passively. This means that the PokéStops are not actively approached, just detected by the radar. At any point where a scanner is doing a job of any kind, e.g. scanning a Pokémon, it collects information about invaded Stops in the surrounding area.
+
 Included is information on the location of the grunt, their quote, and their gender. There is a specific set of Pokémon assigned to every combination of quote and gender. This set consists of different Pokémon which can be encountered as invasion reward at different odds.
+
 Since the workers never actively engage in a Rocket battle, they do not know exactly which Pokémon will be the reward. Consequently, you cannot filter for specific Pokémon in Poracle, but only for type and gender.
 
 All invasion-commands start with */invasion*. 
-You can remove all filtering settings for invasions using **`/invasion remove`**. 
-**`!invasion`** - sends notifications for all invaded Stops. 
+You can remove all filtering settings for invasions using **`/invasion remove everything`**. 
+
+**`!invasion everything`** - sends notifications for all invaded Stops. 
+
 *!invasion*-commands can be specified by both areas and distances (d). 
+
 Additionally, you can filter by all 16 available Pokémon types and gender.
 
 | Written Command | Meaning/Result |   
 | :-----------|:-------------|  
-|"normal"| Tracks invasions with a chance to get a normal type Pokémon  |  
-|"fire"| Tracks invasions with a chance to get a fire type Pokémon  |  
-|"fighting"| Tracks invasions with a chance to get a fighting type Pokémon  |  
-|"water"| Tracks invasions with a chance to get a water type Pokémon  |  
-|"flying"| Tracks invasions with a chance to get a flying type Pokémon  |  
-|"grass"| Tracks invasions with a chance to get a grass type Pokémon  |  
-|"poison"| Tracks invasions with a chance to get a poison type Pokémon  |  
-|"electric"| Tracks invasions with a chance to get an electric type Pokémon  |  
-|"ground"| Tracks invasions with a chance to get a ground type Pokémon  |  
-|"psychic"| Tracks invasions with a chance to get a psychic type Pokémon  |  
-|"rock"| Tracks invasions with a chance to get a rock type Pokémon  |  
-|"ice"| Tracks invasions with a chance to get an ice type Pokémon  |  
-|"bug"| Tracks invasions with a chance to get a bug type Pokémon  |  
-|"dragon"| Tracks invasions with a chance to get a dragon type Pokémon  |  
-|"ghost"| Tracks invasions with a chance to get a ghost type Pokémon  |  
-|"dark"| Tracks invasions with a chance to get a dark type Pokémon  |  
-|"steel"| Tracks invasions with a chance to get a steel type Pokémon  |  
-|"fairy"| Tracks invasions with a chance to get a fairy type Pokémon  |  
-|"mixed"| Tracks invasions with an undetermined type | 
-|"male"| Tracks male invasions  | 
-|"female"| Tracks female invasions  | 
+|normal| Tracks invasions with a chance to get a normal type Pokémon  |  
+|fire| Tracks invasions with a chance to get a fire type Pokémon  |  
+|fighting| Tracks invasions with a chance to get a fighting type Pokémon  |  
+|water| Tracks invasions with a chance to get a water type Pokémon  |  
+|flying| Tracks invasions with a chance to get a flying type Pokémon  |  
+|grass| Tracks invasions with a chance to get a grass type Pokémon  |  
+|poison| Tracks invasions with a chance to get a poison type Pokémon  |  
+|electric| Tracks invasions with a chance to get an electric type Pokémon  |  
+|ground| Tracks invasions with a chance to get a ground type Pokémon  |  
+|psychic| Tracks invasions with a chance to get a psychic type Pokémon  |  
+|rock| Tracks invasions with a chance to get a rock type Pokémon  |  
+|ice| Tracks invasions with a chance to get an ice type Pokémon  |  
+|bug| Tracks invasions with a chance to get a bug type Pokémon  |  
+|dragon| Tracks invasions with a chance to get a dragon type Pokémon  |  
+|ghost| Tracks invasions with a chance to get a ghost type Pokémon  |  
+|dark| Tracks invasions with a chance to get a dark type Pokémon  |  
+|steel| Tracks invasions with a chance to get a steel type Pokémon  |  
+|fairy| Tracks invasions with a chance to get a fairy type Pokémon  |  
+|mixed| Tracks invasions with an undetermined type | 
+|male| Tracks male invasions  | 
+|female| Tracks female invasions  | 
 |giovanni|Tracks for giovanni|
-|arlo|
-|cliff|
-|sierra|
+|arlo|Tracks for arlo|
+|cliff|Tracks for cliff|
+|sierra|Tracks for sierra|
+|decoy|Tracks for decoy grunts|
+|mixed|Tracks for invasions with a mixed type |
 
 *Note:* You can combine several filters/types. E.g.: **`/invasion fire water ice male`** - tracks all male invasions with either a fire type, water type, or ice type Pokémon as a reward.
 
 ### Lures
 
-Track when lures have been
+Track when lures have been placed on pokestops
+
+eg: **`/lure mossy`**
+
+|normal|
+|magnetic|
+|grassy|
+|mossy|
 
 ### Nests
 

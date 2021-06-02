@@ -24,28 +24,32 @@ of -1 in filtering decisions - specifiying a minimum iv of 0 (ie iv0) will exclu
 |everything |`!track everything iv90 level20` | Tracks eveything with a minimum IV of 90% level 20 and higher. |
 |type|`!track dragon` | Track dragon type pokemon
 |gen |`!track everything gen6 iv60`<br>`!track dark gen3 iv90` | *gen* is a filter so needs to be specified alongside 'everything' or types lists of pokemon. Tracks gen 6 pokemon with a minimum IV of 60% level 15 and higher. |
-|atk, def, sta|
-|maxatk, maxdef, maxsta|
+|atk, def, sta|minimum atk,def,sta|
+|maxatk, maxdef, maxsta| |maximum atk, def, sta|
 |cp|
 |form||
-|t|
-|rarity||1-6 or [ ... ultra-rare, unseen]|
-|maxrarity| common, uncommon, rare, very-rare, ultra-rare, unseen|
+|t||Minimum time left|
+|rarity||minimum rarity (1-6) or common,  uncommon, rare, very-rare, ultra-rare, unseen|
+|maxrarity|maximum rarity (1-6) or common, uncommon, rare, very-rare, ultra-rare, unseen|
 |greatcp|
-|clean|
-|template|
+|clean||delete alarm after it expires|
+|template||specify an alternate template (administrator will give you template ids)|
 
 # PVP
 
 |Command|Usage|
 |---|---|
 |`!track snorlax great1`| for top 1 great league snorlax|
-|`!track everything great1 greatcp1450`| for top 1 great league pokemon| maxing out at or above 1450CP|
+|`!track everything great1 greatcp1450`| for top 1 great league pokemon maxing out at or above 1450CP|
 |`!track snorlax ultra100`| for top 100 ultra league snorlax|
 |`!track everything ultra1 ultracp2400`| for top 1 great league pokemon maxing out at or above 2400CP|
 
 An example notification containing PVP information - you can see what this Eevee can become in Great and Ultra leagues in all its various forms
 
+In the alert the display contains all the evolutions, if their rank/CP match.
+
+* if one tracks e.g. Bulbasaur... it will show the ranks for evolutions (e.g. ivysaur), ... but that tracking rule won't make it track Venusaur itself (i.e. a wild spawn).
+* you can directly track an evolution, like Ivysaur, and matching bulbasaur will be found
 
 # Advanced options
 
