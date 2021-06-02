@@ -3,7 +3,7 @@ title: Poracle for Groups
 nav_order: 1
 layout: default
 parent: English
-grand_parent: v3 Userguide
+grand_parent: User Guide
 ---
 
 # Poracle for Groups

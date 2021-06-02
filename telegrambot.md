@@ -1,6 +1,6 @@
 ---
 title: Telegram Bot
-nav_order: 7
+nav_order: 10
 layout: default
 ---
 
@@ -32,15 +32,15 @@ Use this token to access the HTTP API:
 For a description of the Bot API, see this page: https://core.telegram.org/bots/api
 ```
 
-This will be the token to use as `TLG_TOKEN=["462xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"]`
+This will be the token to use in your local.json `"462xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"`
 
 Next create a new group in telegram, name it and invite your bot to it.
 
-This channel name can be used as `TLG_CHANNEL=newGroupName` so this will serve as the chat where users can register with the `/poracle` command
+This channe will serve as the chat where users can register with the `/poracle` command
 
-There are a couple of options to find out your id for `TLG_ADMINS=["201234515"]`.
+There are a couple of options to find out your id for the admins list `["201234515"]`.
 
 You can:
-1. Run the bot first without admins and run the `/adminid` command
+1. Run the bot first without admins and run the `/identify` command
 2. Run without admins, register in the channel with `/poracle` and check your database for humans table id column
 3. Interact with the bot and navigate to `https://api.telegram.org/bot462xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx/getUpdates` to find your id

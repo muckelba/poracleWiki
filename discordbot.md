@@ -1,6 +1,6 @@
 ---
 title: Discord Bot
-nav_order: 6
+nav_order: 9
 layout: default
 ---
 
@@ -23,14 +23,21 @@ Get your **token** by using the "click to reveal" button in the App Bot User sec
 
 ![](assets/Screen%20Shot%202017-12-07%20at%2002.12.19.png)
 
+You need to tick the 'server member intents' for Poracle's role checking to work
+
+![](assets/discord-bot-server-members-intent.png)
+
 Now it's time to invite your bot to your server. Don't worry about the bot being up and running for this next step. Replace `YOUR_CLIENT_ID_HERE` in this URL with your Client ID as shown below.
 
 ```
 https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=0
 ```
 
-
 ![](assets/Screen%20Shot%202017-12-07%20at%2002.16.33.png)
 
-Once you follow `https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=0` you will be asked to sign in and authorize the bot to join your server.
+
+Once you follow `https://discordapp.com/oauth2/authorize?&client_id=YOUR_CLIENT_ID_HERE&scope=bot&permissions=536870928` you will be asked to sign in and authorize the bot to join your server.
+
+
+Member intents
 
