@@ -16,6 +16,27 @@ Because of the flexible dts, you can build a direct link to a tileserver
 if you want, or you can use the ``{{staticMap}}`` calculated URL
 which Poracle will do the heavy lifting for you.
 
+## Discord
+
+```json
+                                "thumbnail": {
+                                        "url": "{{{imgUrl}}}"
+                                },
+                                "image": {
+                                        "url": "{{{staticMap}}}"
+                                }
+```
+
+## Telegram
+
+```json
+                "template": {
+                        "content": "[\u200A]({{{staticMap}}}) ...
+...
+                        "webpage_preview": true,
+                      
+```
+
 For best results, the recommendation is to use a SwiftTileServer and
 set Poracle to use the `tileservercache` option (see below) - as this
 causes the tile to be pregenerated and therefore instantly available
@@ -26,13 +47,14 @@ link title - ie put ``[\u200A]({{{staticMap}}})`` in your template and
 set `webpage_preview` to True. You can see this in the example DTS for
 weatherchange.
 
-# Static Maps
+# Map Providers
 
 Poracle supports five different staticmaps services for displaying little maps below your alarms by using `{{{staticMap}}}`
 
-## TileServerCache
+## Flo's TileServerCache
 
 That's the option for a self hosted TileServerCache server. Read more about it [here](https://github.com/123FLO321/SwiftTileserverCache). 
+This is the recommended way to configure tiles in Poracle.
 
 You need to copy the templates located in `tileservercache_templates/` into the `Templates/` directory of your Tileserver so
 that Poracle has access to the templates it needs to generate the tiles.
