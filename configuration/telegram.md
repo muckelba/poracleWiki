@@ -14,6 +14,11 @@ is not possible.  There is an option to have poracle attempt a registration on t
 issuing `/start` via direct message (this is what the *start bot* menu option sends) - the
 user will still have to qualify by being a member of a registation channel.
 
+# Group tracking
+
+Inside a group issue the command '/channel add' to add the group for notifications; you
+can then do all the normal tracking commands within the group.
+
 # Channel tracking
 
 Channels can also have tracking added to them, but configuration for these needs to be done by
@@ -22,12 +27,12 @@ admins outside of the channel.
 You first issue the `/identify` command inside the channel to have Poracle report the channel
 identity, and then use this in a `/channel add` command. Note that this is a negative number.
 
-`!channel add -xxxxxxx namemychannel` - note that the *name* prefix is a parameter title and
+`/channel add -xxxxxxx namemychannel` - note that the *name* prefix is a parameter title and
 an important part of the command.
 
 You then can add trackings by sending DM to Poracle and including the name designator.
 
-`!track everything iv100 namemychannel`
+`/track everything iv100 namemychannel`
 
 # Stickers
 
