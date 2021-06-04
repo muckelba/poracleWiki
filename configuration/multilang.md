@@ -37,7 +37,7 @@ any translations, please see the customisation section later.
 
 ### Customising the translation
 
-* Create a file called `custom.<locale>.json` - eg `custon.en.json` in your config
+* Create a file called `custom.<locale>.json` - eg `custom.en.json` in your config
 directory to override standard configuration
 
 ### Translating your own language
