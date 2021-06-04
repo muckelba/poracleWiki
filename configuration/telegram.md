@@ -27,12 +27,19 @@ admins outside of the channel.
 You first issue the `/identify` command inside the channel to have Poracle report the channel
 identity, and then use this in a `/channel add` command. Note that this is a negative number.
 
-`/channel add -xxxxxxx namemychannel` - note that the *name* prefix is a parameter title and
+`/channel add -xxxxxxx namemychannel` - note that the *name* prefix is a parameter and
 an important part of the command.
 
-You then can add trackings by sending DM to Poracle and including the name designator.
+You then can add trackings by sending DM to Poracle and including the *name* designator.
 
-`/track everything iv100 namemychannel`
+```
+/channel add namehundos -111111111
+/area add city namehundos
+/track everything iv100 namehundos`
+/channel add namepvp -2222222
+/area add city namepvp
+/track everything ultra1 ultracp2450 namepvp
+```
 
 # Stickers
 
