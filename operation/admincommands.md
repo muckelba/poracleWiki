@@ -33,14 +33,7 @@ all the time they are disabled.  They will be marked in the `!userlist` above.
 
 # apply *run commands across multiple channels*
 
-The apply command can be to issue commands against multiple channels, by ID or by name. 
-Remember `!userlist` will list your users and channels if you need to remember what's going on. You can use % wildcards for matching channel names.
-
-Use the | separator to indicate the end of the channel list and start of commands, and between commands. You need the spaces!
-
-`!apply 34455322334 234442223432 | track bulbasaur`
-
-`!apply %events | untrack everything | track fletchling iv95`
+The apply command is a [discord only](discord.md) can be to issue commands against multiple channels, by ID or by name.
 
 # channel
 
