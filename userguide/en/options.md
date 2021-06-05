@@ -119,7 +119,9 @@ All quest commands start with **`/!quest`** and can be removed again using **`!q
 **`/quest Pikachu`** - sends notifications for all quests with Pikachu as a reward. 
 
 ### Items  
-**`/quest everything`** - sends notifications for all quests. 
+**`/quest everything`** - sends notifications for all quests.
+**`/quest all_items`** - sends notifications for all item reward quests.
+**`/quest all_pokemon`** - sends notifications for all pokemon reward quests.
 **`/quest rare_candy`** - sends notifications for all quests with rare candy as a reward.  
 
 | Written Command | Item Name |   
@@ -136,12 +138,12 @@ All quest commands start with **`/!quest`** and can be removed again using **`!q
 |Revive  | Revive |  
 |Max_Revive  | Max Revive |  
 |Lucky_Egg  | Lucky Egg |  
-|Incense_Ordinary  | Incense |  
+|Incense  | Incense |  
 |Lure_module  | Lure Module |  
 |glacial_lure_module  | Glacial Lure Module |  
 |mossy_lure_module  | Mossy Lure Module |  
 |magnetic_lure_module| Magnetic Lure Module |  
-|Razz Berry  | Razz Berry |  
+|Razz_Berry  | Razz Berry |  
 |Nanab_Berry  | Nanab Berry |  
 |Pinap_Berry  | Pinap Berry |  
 |Golden_Razz_Berry  | Golden Razz Berry |  
@@ -150,10 +152,10 @@ All quest commands start with **`/!quest`** and can be removed again using **`!q
 |egg_incubator  | Egg Incubator |  
 |super_incubator  | Super Incubator |  
 |Sun_Stone  | Sun Stone |  
-|Kings_Rock  | King's Rock |  
+|King's_Rock  | King's Rock |  
 |Metal_Coat  | Metal Coat |  
 |Dragon_Scale  | Dragon Scale |  
-|Up_Grade  | Up-Grade |  
+|Upgrade  | Up-Grade |  
 |Sinnoh_Stone  | Sinnoh Stone |  
 |Unova_Stone  | Unova Stone |  
 |Fast_TM  | Fast TM |  

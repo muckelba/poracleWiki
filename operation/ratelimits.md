@@ -43,9 +43,27 @@ you to re-enable their account.
 
 # Discord Rate Limits
 
-Discord limits are per route
+Discord limits are per route; the exact limits per operation are not disclosed. If you
+see messages like this:
 
-Webhook limits 
+```
+2021-06-05 13:58:24 $MAIN warn: #1 Discord worker [Professor Willow#2751] 429 rate limit hit - in timeout 3498 route /channels/8**4/messages
+```
+
+in your log then you are being limited.  Note that the channel shown may refer to a channel or 
+may be an individual user's direct messages - unfortunately discord shows these with an internal
+channel number so they are hard to reconcile (although you will likely see lots of notifications)
+being created for a user.  Running the [alarm_stats](alarm_stats.md) script can help.
+
+With a sensible poracle rate limit you can avoid hitting most discord limits.
+
+Adding more bots won't help you overcome rate limits (they are per route, not per bot)
+
+## Webhook limits 
+
+If you have a busy channel which you would like to avoid discord rate limits, you may find that swapping
+to delivering via a webhook allows higher throughput.  This is a matter of some debate
+and subject to change by discord.  You can try it and let us know!
 
 # Telegram Rate Limits
 
