@@ -120,7 +120,7 @@ available filters:
 |female     |`!track pikachu female`          | Tracks female pikachu |
 |genderless |`!track unown genderless`        | Tracks genderless unowns |
 |everything |`!track everything iv90 level20` | Tracks eveything with a minimum IV of 90% level 20 and higher. <br/> ⚠️This will overwrite all other monsters in the command⚠️ |
-|gen |`!track gen6 iv60 level15` | Tracks gen 6 pokemon with a minimum IV of 60% level 15 and higher. <br/> ⚠️This will overwrite all other monsters in the command⚠️ |
+|gen |`!track everything gen6 iv60 level15` | Tracks gen 6 pokemon with a minimum IV of 60% level 15 and higher. <br/> ⚠️This will overwrite all other monsters in the command⚠️ |
 |clean |`!track pikachu clean` | Automatically deletes the messages as soon as the pokemon expires |
 
 ### !untrack

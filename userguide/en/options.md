@@ -160,6 +160,8 @@ All quest commands start with **`/!quest`** and can be removed again using **`!q
 |Unova_Stone  | Unova Stone |  
 |Fast_TM  | Fast TM |  
 |Charged_TM  | Charged TM |  
+|Elite_Fast_TM | Elite Fast TM |
+|Elite_Charged_TM | Elite Charged TM |
 |Rare_Candy  | Rare Candy |  
 
 **Note:** The system only supports English names for quest items. You can select all items available in the game data. This does not mean, however, that all those items are actually available in quests or at all in the game.
