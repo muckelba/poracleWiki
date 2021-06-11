@@ -73,6 +73,15 @@ curl http://127.0.0.1:3030/health
 
 If everything is working poracle will respond:
 
+# PM2 warning on startup
+
+```2|poracle  | WARNING: NODE_APP_INSTANCE value of '0' did not match any instance config file names.
+2|poracle  | WARNING: See https://github.com/lorenwest/node-config/wiki/Strict-Mode
+```
+
+Create default-0.json in config folder containing
+
+```{}```
 
 # How does Poracle eliminate duplicates?
 
