@@ -147,8 +147,8 @@ Any of the fields can be customized with the following:
 |{{tthh}}| Full hours until hidden|
 |{{tthm}}| Full minutes until hidden|
 |{{tths}}| Full seconds until hidden|
-|{{verified}}| True/False if disappear timestamp is verified|
-|{{#if verified}}Verified{{else}}Not verified{{/if}}| Example verified|
+|{{confirmedTime}}| True/False if disappear timestamp is verified|
+|{{#if confirmedTime}}Verified{{else}}Not verified{{/if}}| Example verified|
 |{{now}}| Current Timestamp|
 |{{latitude}}| Latitude of the alerted location|
 |{{longitude}}| Longitude of the alerted location|

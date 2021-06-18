@@ -14,6 +14,19 @@ The `!userlist` command shows a list of registered users. These user identities 
 for other administrative commands.  For discord you can often get the ID of a user by
 right clicking and selecting *copy id*.
 
+The userlist can be filtered by passing one or more of these parameters:
+
+|command|meaning|
+|---|---|
+|disabled|Disabled users|
+|enabled|Enabled users|
+|telegram|Telegram only|
+|discord|Discord only|
+|webhook|Webhooks only|
+|channel|Channels only|
+|group|Groups only|
+|user|Users only|
+
 # backup, restore
 
 # community
