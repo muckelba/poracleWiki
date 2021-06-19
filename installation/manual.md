@@ -55,32 +55,29 @@ Before we start the installation, we should decide on a user and installation di
 #### Creating a User
 We should never install software or run programs as `root`. This is a security hole that is easy to avoid. You can read more about installing as root [here](https://bencane.com/2012/02/20/why-you-should-avoid-running-applications-as-root/). If you already have a user you can skip this step.
 
-For this example we will be creating a new user, `pogo`, that will be used for running PoracleJS. It will have its home directory in `/home/pogo`.
+### Check version of node
 ```bash
-sudo useradd -m pogo
+node -v
 ```
 
-#### Creating a directory
-Since we want to use `/opt` for PoracleJS we will need to create a new directory with root.
-```bash
-sudo mkdir /opt/PoracleJS
-sudo chown pogo:pogo /opt/PoracleJS
-```
+This should return either node 12 or node 14.
 
 ### Installation
-Now that we have decided on the installation directory and the user responsible for PoracleJS we can begin the installation process.
-
 1. Ensure you are running as the correct user. If not, switch to that account with `su <username>`. An example would be `su pogo` to switch the account `pogo`.
-2. Ensure you are in your installation directory. If you are using `/opt/PoracleJS` as previously indicated, you can switch here by executing `cd /opt/PoracleJS`.
+2. Ensure you are in the directory where you would like Poracle to be installed. 
 3. The source of PoracleJS is hosted on GitHub. We will need to clone the repository with git into our current directory (specified by the `.` at the end of the clone).
    ```bash
-   git clone https://github.com/KartulUdus/PoracleJS.git .
+   git clone https://github.com/KartulUdus/PoracleJS.git 
    ```
-4. Install PoracleJS requirements
+4. Change into the Poracle directory
+   ```bash
+   cd PoracleJS
+   ```
+5. Install PoracleJS requirements
     ```bash
     npm install
     ```
-5. Clone the configuration to be used later
+6. Clone the configuration to be used later
     ```bash
     cp config/default.json config/local.json
     ```
@@ -90,22 +87,14 @@ To update the manual installation, you must perform a `git pull` in the correct 
 
 An example update set of commands:
 ```bash
-su pogo
-cd /opt/PoracleJS
 git pull
-```
-
-Fixing permission errors:
-```bash
-sudo chown -R pogo:pogo /opt/PoracleJS
 ```
 
 # Auto-Starting
 There are a few services that allow for easy management of a process. The easiest to use is [pm2](https://pm2.keymetrics.io/). Since we never added the user `pogo` to sudoers we will be unable to run that command. If that is the case, exit back out to root and run the command. Once installed switch back to the user created for running PoracleJS. Utilizing pm2 for auto-startup requires running the following commands:
 ```bash
 npm install pm2 -g
-cd /opt/PoracleJS
-pm2 start src/app.js --name poracle -u pogo
+pm2 start src/app.js --name poracle 
 ```
 
 The following commands are useful for pm2
