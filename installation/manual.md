@@ -19,8 +19,8 @@ PoracleJS requires several prerequisites to operate. The following prerequisites
 ### Notification Service
 We will need to configure a Discord or Telegram bot to allow PoracleJS to send messages to the required service. Only one bot is required for the configuration. PoracleJS will require the token for the user regardless of the service. This will be highlighted in the individual pages on how to obtain that information.
 
- * [Discord Bot](../../discordbot.html)
- * [Telegram Bot](../../telegrambot.html)
+ * [Discord Bot](discord.html)
+ * [Telegram Bot](telegram.html)
 
 ### Database
 A database and user need to be configured for PoracleJS to access the database. While you can reuse existing users it is recommended to create a new user for each application.
