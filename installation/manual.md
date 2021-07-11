@@ -77,9 +77,9 @@ This should return either node 12 or node 14.
     ```bash
     npm install
     ```
-6. Clone the configuration to be used later
+6. Create the basic config
     ```bash
-    cp config/default.json config/local.json
+    npm run init
     ```
    
 # Updating
