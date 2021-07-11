@@ -19,7 +19,8 @@ parent: Installation
 
 # Find your identity
 
-Start poracle
+Start poracle.
+
 Send a direct message to the bot with the text `/identify` - this should respond with something like 
 `This is a private message and your id is: [ xxxxxxxxxxxxx ]`.  This number is your 
 telegram user id, and should go into the `admins` section of the configuration.
