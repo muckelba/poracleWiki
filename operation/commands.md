@@ -144,7 +144,7 @@ Available filters:
 |instinct|`!raid zapdos instinct`| Tracks zapdos raids where controlling team is Instinct|
 |mystic|`!raid articuno mystic`| Tracks articuno raids where controlling team is mystic|
 |valor|`!raid moltres valor`| Tracks moltres raids where controlling team is valor|
-|form|`!raid exeggutor formalola`| Tracks Exeggutor raids i your area if form is Alolan| 
+|form|`!raid exeggutor formalola`| Tracks Exeggutor raids in your area if form is Alolan| 
 |harmony|`!raid venusaur harmony`| Tracks venusaur raids in uncontested gyms|
 |everything|`!raid everything`| Tracks Raids from level 1 - 6|
 |gen|`!raid gen5`| Tracks raids against gen5 pokemon|
