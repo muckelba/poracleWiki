@@ -18,6 +18,10 @@ It includes packages to run the [wiki](https://muckelba.github.io/poracleWiki/) 
 Linting rules will be checked automatically by travis; however, should you wish to save some time, you can run the check locally by running:  
 `npm run lint` (please note,  Windows users may have to run `node_modules\.bin\eslint app\src` manually)
 
+The `develop` branch is used for all changes, which are folded into `master` when we reach an island of stability (usually every
+couple of months).  In truth though, most active users will drink from the firehose and live on develop as we don't let bugs 
+last for very long!
+
 ### Submitting a helpful pull request
 
 * **Description** - Describe in detail the changes you made. If you add or remove specific libraries, frameworks, etc, please list the specific frameworks. Any movements between files.
